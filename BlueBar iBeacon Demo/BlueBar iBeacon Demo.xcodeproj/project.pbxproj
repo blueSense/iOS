@@ -14,7 +14,6 @@
 		0942E110188724C1006E992E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942E10F188724C1006E992E /* main.m */; };
 		0942E114188724C1006E992E /* BSNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942E113188724C1006E992E /* BSNAppDelegate.m */; };
 		0942E117188724C1006E992E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0942E115188724C1006E992E /* Main_iPhone.storyboard */; };
-		0942E11A188724C1006E992E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0942E118188724C1006E992E /* Main_iPad.storyboard */; };
 		0942E11D188724C1006E992E /* BSNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0942E11C188724C1006E992E /* BSNViewController.m */; };
 		0942E11F188724C1006E992E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0942E11E188724C1006E992E /* Images.xcassets */; };
 		0942E126188724C1006E992E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0942E125188724C1006E992E /* XCTest.framework */; };
@@ -47,7 +46,6 @@
 		0942E112188724C1006E992E /* BSNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNAppDelegate.h; sourceTree = "<group>"; };
 		0942E113188724C1006E992E /* BSNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSNAppDelegate.m; sourceTree = "<group>"; };
 		0942E116188724C1006E992E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		0942E119188724C1006E992E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0942E11B188724C1006E992E /* BSNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSNViewController.h; sourceTree = "<group>"; };
 		0942E11C188724C1006E992E /* BSNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSNViewController.m; sourceTree = "<group>"; };
 		0942E11E188724C1006E992E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -83,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0902224D188753E3004880BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0942E13D18872792006E992E /* Offer@2x.png */,
+				0942E13E18872792006E992E /* Welcome@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
 		0942E0F7188724C1006E992E = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +124,10 @@
 		0942E109188724C1006E992E /* BlueBar iBeacon Demo */ = {
 			isa = PBXGroup;
 			children = (
-				0942E13D18872792006E992E /* Offer@2x.png */,
-				0942E13E18872792006E992E /* Welcome@2x.png */,
+				0902224D188753E3004880BB /* Resources */,
 				0942E112188724C1006E992E /* BSNAppDelegate.h */,
 				0942E113188724C1006E992E /* BSNAppDelegate.m */,
 				0942E115188724C1006E992E /* Main_iPhone.storyboard */,
-				0942E118188724C1006E992E /* Main_iPad.storyboard */,
 				0942E11B188724C1006E992E /* BSNViewController.h */,
 				0942E11C188724C1006E992E /* BSNViewController.m */,
 				0942E11E188724C1006E992E /* Images.xcassets */,
@@ -222,7 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942E14018872792006E992E /* Welcome@2x.png in Resources */,
-				0942E11A188724C1006E992E /* Main_iPad.storyboard in Resources */,
 				0942E13F18872792006E992E /* Offer@2x.png in Resources */,
 				0942E11F188724C1006E992E /* Images.xcassets in Resources */,
 				0942E117188724C1006E992E /* Main_iPhone.storyboard in Resources */,
@@ -282,14 +287,6 @@
 				0942E116188724C1006E992E /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		0942E118188724C1006E992E /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0942E119188724C1006E992E /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -379,6 +376,7 @@
 				GCC_PREFIX_HEADER = "BlueBar iBeacon Demo/BlueBar iBeacon Demo-Prefix.pch";
 				INFOPLIST_FILE = "BlueBar iBeacon Demo/BlueBar iBeacon Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,6 +391,7 @@
 				GCC_PREFIX_HEADER = "BlueBar iBeacon Demo/BlueBar iBeacon Demo-Prefix.pch";
 				INFOPLIST_FILE = "BlueBar iBeacon Demo/BlueBar iBeacon Demo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -458,6 +457,7 @@
 				0942E137188724C1006E992E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0942E138188724C1006E992E /* Build configuration list for PBXNativeTarget "BlueBar iBeacon DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +466,7 @@
 				0942E13A188724C1006E992E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
