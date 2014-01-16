@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "NSMutableArray+QueueAdditions.h"
 
 @interface BSNViewController : UIViewController
 
@@ -16,6 +17,6 @@
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-
+@property (strong, nonatomic) NSMutableArray *filterBuffer;
 
 @end

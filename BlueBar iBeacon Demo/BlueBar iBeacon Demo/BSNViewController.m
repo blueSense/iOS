@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.filterBuffer = [[NSMutableArray alloc] init];
+    
     // Initialize location manager and set ourselves as the delegate
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -71,7 +73,22 @@
     // Beacon found!
     CLBeacon *foundBeacon = [beacons firstObject];
     
-    if (foundBeacon.proximity == CLProximityImmediate)
+    [self.filterBuffer enqueue:foundBeacon];
+    if (self.filterBuffer.count < 10)
+    {
+        [self displayImage:@"Welcome"];
+        return;
+    }
+    
+    [self.filterBuffer dequeue];
+    
+    NSInteger minImmediateProximitySightings = 0;
+    for (NSInteger i=0; i < self.filterBuffer.count; i++) {
+        if (((CLBeacon*)self.filterBuffer[i]).proximity == CLProximityImmediate)
+            minImmediateProximitySightings++;
+    }
+    
+    if (minImmediateProximitySightings > 5)
         [self displayImage:@"Offer"];
     else
         [self displayImage:@"Welcome"];
