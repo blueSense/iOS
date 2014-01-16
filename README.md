@@ -1,7 +1,9 @@
 iOS
 ===
 
-Support code and code samples for iOS
+BlueBar support code and code samples for iOS. 
+Copyright 2014 [Blue Sense Networks](http://bluesensenetworks.com)
+
 
 BlueBar iBeacon Demo app
 ==========================================
@@ -12,3 +14,4 @@ Features:
 
 Known limitations:
 - Takes into account only the closest beacon it hears
+- 
