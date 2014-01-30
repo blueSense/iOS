@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.currentState = 0;
     self.filterBuffer = [[NSMutableArray alloc] init];
     
     // Initialize location manager and set ourselves as the delegate
@@ -42,6 +43,8 @@
     }
 
     [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +56,17 @@
 {
     NSString* fullPath = [imageName stringByAppendingString:@"@2x.png"];
 
-    self.offerDisplay.image = [UIImage imageNamed: fullPath];
+    UIImage* image = [UIImage imageNamed: fullPath];
+    [self.offerDisplay setImage: image forState: UIControlStateNormal];
+}
+
+
+- (IBAction)TouchUpInside:(id)sender {
+    if (self.currentState != 1)
+        return;
+    
+    NSURL* url = [[NSURL alloc] initWithString:@"http://BlueSenseNetworks.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion *)region
@@ -72,6 +85,8 @@
 {
     // Beacon found!
     CLBeacon *foundBeacon = [beacons firstObject];
+    if (foundBeacon == nil)
+        return;
     
     [self.filterBuffer enqueue:foundBeacon];
     if (self.filterBuffer.count < 10)
@@ -89,9 +104,15 @@
     }
     
     if (minImmediateProximitySightings > 5)
+    {
+        self.currentState = 1;
         [self displayImage:@"Offer"];
+    }
     else
+    {
+        self.currentState = 0;
         [self displayImage:@"Welcome"];
+    }
     
     // You can retrieve the beacon data from its properties
     //NSString *uuid = foundBeacon.proximityUUID.UUIDString;

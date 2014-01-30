@@ -13,10 +13,13 @@
 
 @interface BSNViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *offerDisplay;
+@property (strong, nonatomic) IBOutlet UIButton *offerDisplay;
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) NSMutableArray *filterBuffer;
+@property NSInteger currentState;
+
+- (IBAction)TouchUpInside:(id)sender;
 
 @end
