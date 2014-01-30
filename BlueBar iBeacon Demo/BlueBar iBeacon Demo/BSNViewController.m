@@ -99,7 +99,8 @@
     
     NSInteger minImmediateProximitySightings = 0;
     for (NSInteger i=0; i < self.filterBuffer.count; i++) {
-        if (((CLBeacon*)self.filterBuffer[i]).proximity == CLProximityNear)
+        CLProximity proximity = ((CLBeacon*)self.filterBuffer[i]).proximity;
+        if (proximity == CLProximityNear || proximity == CLProximityImmediate)
             minImmediateProximitySightings++;
     }
     
