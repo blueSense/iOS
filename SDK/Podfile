@@ -1,0 +1,11 @@
+workspace "BlueBar Service App"
+
+target :"BlueBar Configuration Utility" do
+
+    platform :ios, "6.0"
+
+    pod "MBProgressHUD", "~> 0.8"
+    pod "RestKit"
+
+    xcodeproj "BlueBar Configuration Utility.xcodeproj"
+end
