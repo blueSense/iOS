@@ -13,5 +13,4 @@ Features:
 - Does simple filtering on sightings to limit the effect of “bad” values, reported by iOS
 
 Known limitations:
-- Takes into account only the closest beacon it hears
-- 
+- Takes into account only the closest beacon it detects;
