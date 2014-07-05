@@ -17,24 +17,11 @@
 		0999CFF5189C693B00E877BC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0999CFF3189C693B00E877BC /* Main_iPhone.storyboard */; };
 		0999CFF8189C693B00E877BC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0999CFF6189C693B00E877BC /* Main_iPad.storyboard */; };
 		0999CFFD189C693B00E877BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999CFFC189C693B00E877BC /* Images.xcassets */; };
-		0999D004189C693B00E877BC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999D003189C693B00E877BC /* XCTest.framework */; };
-		0999D005189C693B00E877BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999CFE1189C693B00E877BC /* Foundation.framework */; };
-		0999D006189C693B00E877BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999CFE5189C693B00E877BC /* UIKit.framework */; };
 		09C202CE189DB3A200C23E5B /* BeaconsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C202CD189DB3A200C23E5B /* BeaconsViewController.m */; };
 		09C2032418A0663900C23E5B /* BeaconDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C2032318A0663900C23E5B /* BeaconDetailViewController.m */; };
 		09EE48E618A2FB570048CCFE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EE48E518A2FB570048CCFE /* LoginViewController.m */; };
 		406FCA66C7FA45D9A02AD0F2 /* libPods-BlueBar Configuration Utility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4E11B647684AE49C93BF5B /* libPods-BlueBar Configuration Utility.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0999D007189C693B00E877BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0999CFD6189C693B00E877BC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0999CFDD189C693B00E877BC;
-			remoteInfo = "BlueBar Service App";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0969D0A2194086C600281BBA /* libBlueBarSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBlueBarSDK.a; path = BlueBarSDK/lib/libBlueBarSDK.a; sourceTree = "<group>"; };
@@ -72,16 +59,6 @@
 				0999CFE6189C693B00E877BC /* UIKit.framework in Frameworks */,
 				0999CFE2189C693B00E877BC /* Foundation.framework in Frameworks */,
 				406FCA66C7FA45D9A02AD0F2 /* libPods-BlueBar Configuration Utility.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0999CFFF189C693B00E877BC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0999D004189C693B00E877BC /* XCTest.framework in Frameworks */,
-				0999D006189C693B00E877BC /* UIKit.framework in Frameworks */,
-				0999D005189C693B00E877BC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,23 +164,6 @@
 			productReference = 0999CFDE189C693B00E877BC /* Beacon Configuration Utility.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0999D001189C693B00E877BC /* BlueBar Configuration UtilityTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0999D016189C693B00E877BC /* Build configuration list for PBXNativeTarget "BlueBar Configuration UtilityTests" */;
-			buildPhases = (
-				0999CFFE189C693B00E877BC /* Sources */,
-				0999CFFF189C693B00E877BC /* Frameworks */,
-				0999D000189C693B00E877BC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0999D008189C693B00E877BC /* PBXTargetDependency */,
-			);
-			name = "BlueBar Configuration UtilityTests";
-			productName = "BlueBar Service AppTests";
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,9 +176,6 @@
 				TargetAttributes = {
 					0999CFDD189C693B00E877BC = {
 						DevelopmentTeam = BNN3C9F338;
-					};
-					0999D001189C693B00E877BC = {
-						TestTargetID = 0999CFDD189C693B00E877BC;
 					};
 				};
 			};
@@ -236,7 +193,6 @@
 			projectRoot = "";
 			targets = (
 				0999CFDD189C693B00E877BC /* BlueBar Configuration Utility */,
-				0999D001189C693B00E877BC /* BlueBar Configuration UtilityTests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,13 +206,6 @@
 				0999CFFD189C693B00E877BC /* Images.xcassets in Resources */,
 				0999CFF5189C693B00E877BC /* Main_iPhone.storyboard in Resources */,
 				0999CFEC189C693B00E877BC /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0999D000189C693B00E877BC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,22 +257,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0999CFFE189C693B00E877BC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0999D008189C693B00E877BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0999CFDD189C693B00E877BC /* BlueBar Configuration Utility */;
-			targetProxy = 0999D007189C693B00E877BC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0999CFEA189C693B00E877BC /* InfoPlist.strings */ = {
@@ -483,46 +417,6 @@
 			};
 			name = Release;
 		};
-		0999D017189C693B00E877BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueBar Service App.app/BlueBar Service App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlueBar Service App/BlueBar Service App-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BlueBar Service AppTests/BlueBar Configuration UtilityTests-Info.plist";
-				PRODUCT_NAME = "BlueBar Configuration UtilityTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0999D018189C693B00E877BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueBar Service App.app/BlueBar Service App";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlueBar Service App/BlueBar Service App-Prefix.pch";
-				INFOPLIST_FILE = "BlueBar Service AppTests/BlueBar Configuration UtilityTests-Info.plist";
-				PRODUCT_NAME = "BlueBar Configuration UtilityTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,15 +434,6 @@
 			buildConfigurations = (
 				0999D014189C693B00E877BC /* Debug */,
 				0999D015189C693B00E877BC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0999D016189C693B00E877BC /* Build configuration list for PBXNativeTarget "BlueBar Configuration UtilityTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0999D017189C693B00E877BC /* Debug */,
-				0999D018189C693B00E877BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
