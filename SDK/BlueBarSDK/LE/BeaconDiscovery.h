@@ -23,9 +23,9 @@
 @protocol BeaconDiscoveryDelegate <NSObject>
 
 @optional
-    - (void) discoveryDidRefresh;
-    - (void) discoveryStatePoweredOff;
 
+    - (void) discoveryDidRefresh:(CBCentralManagerState)state;
+    - (void) discoveryStatePoweredOff;
     - (void) discoveredBeacon:(DetectedBeacon*)beacon;
 @end
 
@@ -36,6 +36,7 @@
 
     @property (nonatomic, assign) id<BeaconDiscoveryDelegate>   discoveryDelegate;
     @property (nonatomic, assign) id<BeaconConnectionDelegate>   connectionDelegate;
+    @property (nonatomic, assign, readonly) CBCentralManagerState   state;
 
     - (void) startScanning;
     - (void) stopScanning;

@@ -38,7 +38,6 @@
 		0999CFF4189C693B00E877BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0999CFF7189C693B00E877BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0999CFFC189C693B00E877BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0999D003189C693B00E877BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		09C202CC189DB3A200C23E5B /* BeaconsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconsViewController.h; sourceTree = "<group>"; };
 		09C202CD189DB3A200C23E5B /* BeaconsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconsViewController.m; sourceTree = "<group>"; };
 		09C2032218A0663900C23E5B /* BeaconDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailViewController.h; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 				0999CFE1189C693B00E877BC /* Foundation.framework */,
 				0999CFE3189C693B00E877BC /* CoreGraphics.framework */,
 				0999CFE5189C693B00E877BC /* UIKit.framework */,
-				0999D003189C693B00E877BC /* XCTest.framework */,
 				0B4E11B647684AE49C93BF5B /* libPods-BlueBar Configuration Utility.a */,
 			);
 			name = Frameworks;

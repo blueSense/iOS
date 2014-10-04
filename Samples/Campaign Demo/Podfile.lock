@@ -1,0 +1,10 @@
+PODS:
+  - ISO8601DateFormatter (0.7)
+
+DEPENDENCIES:
+  - ISO8601DateFormatter (~> 0.6)
+
+SPEC CHECKSUMS:
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+
+COCOAPODS: 0.34.1

@@ -34,9 +34,10 @@
     - (void) start;
 
     @property (nonatomic, copy) NSString *uuid;
-    @property NSInteger major;
-    @property NSInteger minor;
-    @property NSInteger advertisementInterval;
-    @property NSInteger signalStrength;
+    @property ( nonatomic ) NSInteger major;
+    @property ( nonatomic ) NSInteger minor;
+    @property ( nonatomic ) NSInteger advertisementInterval;
+    @property ( nonatomic ) NSInteger signalStrength;
+    @property ( nonatomic ) NSInteger battery;
 
 @end

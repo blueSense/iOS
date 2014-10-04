@@ -10,6 +10,10 @@
 
 @interface ApiCredentials : NSObject
 
+- (id) initWithApplicationId:(NSString *)applicationId andPrivateKey:(NSString *)privateKey;
+
+@property (nonatomic, copy) NSString *applicationId;
+
 @property (nonatomic, copy) NSString *clientId;
 @property (nonatomic, copy) NSString *privateKey;
 

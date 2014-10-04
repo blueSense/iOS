@@ -7,12 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ApiOperations.h"
-#import "BeaconDiscovery.h"
+#import "Model/BeaconConfiguration.h"
+#import "Model/DetectedBeacon.h"
+#import "Model/ApiOperations.h"
+#import "Model/ApiCredentials.h"
+#import "Model/ApiSession.h"
+#import "Model/RangingManager.h"
+#import "LE/BeaconConfigurationService.h"
+#import "LE/BeaconDiscovery.h"
+
+@class BeaconDiscovery;
+@class ApiOperations;
+@class ApiCredentials;
+@class RangingManager;
+
+
+@protocol BlueBarSDKStatusDelegate <NSObject>
+
+@optional
+- (void) userMessage:(NSString*)message;
+@end
 
 @interface BlueBarSDK : NSObject
 
-+(BeaconDiscovery *) Discovery;
-+(ApiOperations*) Api;
++ (BeaconDiscovery *) Discovery;
++ (ApiOperations*) Api;
++ (RangingManager*) Ranging;
 
++ (id<BlueBarSDKStatusDelegate>) SetStatusDelegate:(id<BlueBarSDKStatusDelegate>)statusDelegate;
++ (id<BlueBarSDKStatusDelegate>) StatusDelegate;
+
++ (void) InitializeWithUsername:(NSString *)username andPassword: (NSString *)password;
++ (void) InitializeWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)appPrivateKey;
++ (void) InitializeWithCredentials:(ApiCredentials*)apiCredentials;
 @end

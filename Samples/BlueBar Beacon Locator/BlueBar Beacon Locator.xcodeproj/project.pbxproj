@@ -35,7 +35,6 @@
 		099D1EB51967509F0045D022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		099D1EB81967509F0045D022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		099D1EBD1967509F0045D022 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		099D1EC41967509F0045D022 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		099D1EDA196750C90045D022 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		099D1EDC196752860045D022 /* BeaconsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconsTableViewController.h; sourceTree = "<group>"; };
 		099D1EDD196752860045D022 /* BeaconsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconsTableViewController.m; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 				099D1EA21967509F0045D022 /* Foundation.framework */,
 				099D1EA41967509F0045D022 /* CoreGraphics.framework */,
 				099D1EA61967509F0045D022 /* UIKit.framework */,
-				099D1EC41967509F0045D022 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
