@@ -338,8 +338,7 @@
 				INFOPLIST_FILE = "Campaign Demo/Campaign Demo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/vpetroff/Projects/BlueSenseNet/GitHub,
-					iOS/SDK/BlueBarSDK/lib,
+					"\"${PROJECT_DIR}/../../SDK/BlueBarSDK\"/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -362,8 +361,7 @@
 				INFOPLIST_FILE = "Campaign Demo/Campaign Demo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/vpetroff/Projects/BlueSenseNet/GitHub,
-					iOS/SDK/BlueBarSDK/lib,
+					"\"${PROJECT_DIR}/../../SDK/BlueBarSDK\"/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
