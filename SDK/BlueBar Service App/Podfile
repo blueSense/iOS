@@ -1,0 +1,12 @@
+workspace "BlueBar Service App"
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+target :"BlueBar Configuration Utility" do
+
+    platform :ios, "7.0"
+    pod "MBProgressHUD", "~> 0.8"
+    pod "ISO8601DateFormatter", "~> 0.6"
+
+    xcodeproj "BlueBar Configuration Utility.xcodeproj"
+end

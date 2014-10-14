@@ -15,7 +15,9 @@
 #import "Model/RangingManager.h"
 #import "LE/BeaconConfigurationService.h"
 #import "LE/BeaconDiscovery.h"
+#import "LE/BeaconCalibration.h"
 
+@class BeaconCalibration;
 @class BeaconDiscovery;
 @class ApiOperations;
 @class ApiCredentials;
@@ -30,6 +32,7 @@
 
 @interface BlueBarSDK : NSObject
 
++ (BeaconCalibration *) Calibration;
 + (BeaconDiscovery *) Discovery;
 + (ApiOperations*) Api;
 + (RangingManager*) Ranging;

@@ -1,0 +1,13 @@
+PODS:
+  - ISO8601DateFormatter (0.7)
+  - MBProgressHUD (0.9)
+
+DEPENDENCIES:
+  - ISO8601DateFormatter (~> 0.6)
+  - MBProgressHUD (~> 0.8)
+
+SPEC CHECKSUMS:
+  ISO8601DateFormatter: 59731cd880cf87e71b4fa95f0d6b713dcbc4cbce
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+
+COCOAPODS: 0.34.1
