@@ -372,7 +372,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BlueBar_Service_App-eixlgrzbdhhjcddxpcuxqtaodqcq/Build/Products/Debug-iphoneos",
-					"\"${PROJECT_DIR}/../BlueBarSDK\"",
+					"\"${PROJECT_DIR}/../BlueBarSDK\"/**",
 				);
 				PRODUCT_NAME = "Beacon Configuration Utility";
 				PROVISIONING_PROFILE = "181870ff-dbc1-4936-8077-9496a22e8f30";
@@ -401,7 +401,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BlueBar_Service_App-eixlgrzbdhhjcddxpcuxqtaodqcq/Build/Products/Debug-iphoneos",
-					"\"${PROJECT_DIR}/../BlueBarSDK\"",
+					"\"${PROJECT_DIR}/../BlueBarSDK\"/**",
 				);
 				PRODUCT_NAME = "Beacon Configuration Utility";
 				PROVISIONING_PROFILE = "181870ff-dbc1-4936-8077-9496a22e8f30";
