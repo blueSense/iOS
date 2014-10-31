@@ -39,4 +39,5 @@ extern NSString *ApiNotification_ActionReceived;
     - (void) updateBeaconDetails:(DetectedBeacon*)beacon;
 
     - (void) reportBeaconSightings:(NSArray *)beacons;
+    - (void) pollForAvailableActionResults;
 @end

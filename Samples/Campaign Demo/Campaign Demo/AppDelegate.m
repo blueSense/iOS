@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    application.applicationIconBadgeNumber = 0;
+
     // In order to be able to access the ProximitySense platform via the API (and the SDK)
     // you need to create an application first. To do that, sign in to ProximitySense and go to
     // API Access/Applications submenu. Use the screen to create an application.
@@ -31,18 +33,25 @@
     
     [BlueBarSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
 
-    // Setup current app user's session
-    // the appSpecificId property can contain a random string, or a Twitter handle, Facebook user id etc
-    // It is used to differentiate physical users of your app. Currently set to a random user Id
-    [BlueBarSDK Api].session = [[ApiSession alloc] init];
-    [BlueBarSDK Api].session.appSpecificId = [[NSUUID alloc] init].UUIDString;
+    //appSpecificId is a string value that represents the app's user identity.
+    //Can be email, LinkedIn profile id, twitter handle, UUID etc, in short anything that you use to identify your users.
+    //This value is used in the analytics panel to detect different users and to remember who has proximity activations
+    [BlueBarSDK Api].session.appSpecificId = [[NSUUID alloc]init].UUIDString;
+    
+    //userMetadata is an additional NSDictionary of values, to assign to the specific appUserId. For example, it can contain fields such as
+    // name, last name, email, profile photo url, in short anything you wish to display in the user analytics panel
+    // Those fields can be used subsequently to create sophisticated usage reports and custom proximity actions
+    NSArray *keys = [NSArray arrayWithObjects:@"first_name", @"last_name", @"email", nil];
+    NSArray *objs = [NSArray arrayWithObjects:@"John", @"Doe", @"john_doe@somewhere.com", nil];
+    [BlueBarSDK Api].session.userMetadata = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
 
-    // Start the SDK. Here we use the Factory Default Blue Sense Networks BlueBar Beacon UUID
-    // The SDK will handle all iBeacon monitoring and ranging for you, as well as make the necessary ProximitySense API calls
-    // Don't forget to add a notification hanlder for API calback notifications.
-    // There is a sample implementation inside the ActionsTableViewController
+    // Factory Default Blue Sense Networks BlueBar Beacon UUID
     [[BlueBarSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
 
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
     return YES;
 }
 							
@@ -71,6 +80,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    // Set icon badge number to zero
+    application.applicationIconBadgeNumber = 0;
 }
 
 @end

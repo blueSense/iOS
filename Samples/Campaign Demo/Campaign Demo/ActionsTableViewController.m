@@ -33,12 +33,67 @@
 
     // Register to receive a notification when ProximitySense returns an action
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionReceived:) name:ApiNotification_ActionReceived object:nil];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear All"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(clearMessages)];
+}
+
+- (void)clearMessages
+{
+    [actions removeAllObjects];
+    [self.tableView reloadData];
 }
 
 - (void)actionReceived:(id)notificationObject
 {
     ActionBase* action = ((NSNotification *)notificationObject).object;
 
+    NSString* title = @"";
+    NSString* body = @"";
+    
+    if ([action isKindOfClass:[MessageAction class]])
+    {
+        MessageAction *messageAction = (MessageAction *)action;
+        
+        title = @"Message";
+        body = messageAction.messageBody;
+    }
+    else
+        if ([action isKindOfClass:[PresenceAction class]])
+        {
+            PresenceAction *presenceAction = (PresenceAction *)action;
+            
+            title = @"Presence";
+            body = presenceAction.presence;
+        }
+        else
+            if ([action isKindOfClass:[KeyValueAction class]])
+            {
+                KeyValueAction *keyValueAction = (KeyValueAction *)action;
+                
+                title = @"KeyValue";
+                body = keyValueAction.metadata.description;
+            }
+            else
+            {
+                title = @"Unknown";
+                body = @"N/A";
+            }
+    
+    // Schedule the notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+    
+    localNotification.alertBody = body;
+    localNotification.alertAction = @"New message";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
+    
     [actions addObject:action];
     [[self tableView] reloadData];
 }

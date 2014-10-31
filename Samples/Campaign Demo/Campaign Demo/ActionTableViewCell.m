@@ -66,6 +66,10 @@
         self.title.text = @"Unknown";
         self.content.text = @"N/A";
     }
+    
+    [self.title sizeToFit];
+    [self.content sizeToFit];
+    [self layoutSubviews];
 }
 
 + (CGFloat)estimatedCellHeight

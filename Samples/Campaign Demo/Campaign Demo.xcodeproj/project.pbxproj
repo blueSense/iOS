@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06C83185FC4648319F22374D /* libPods-Campaign Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 008CA0A4421240BEB8D76B6C /* libPods-Campaign Demo.a */; };
 		0907F3AF19D49F6F0051E581 /* ActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0907F3AE19D49F6F0051E581 /* ActionsTableViewController.m */; };
 		093EF5DD19DCDF6300A51AB2 /* ActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 093EF5DC19DCDF6300A51AB2 /* ActionTableViewCell.m */; };
 		09833A7619BF40C8003AE853 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09833A7519BF40C8003AE853 /* Foundation.framework */; };
@@ -17,8 +16,8 @@
 		09833A8219BF40C8003AE853 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09833A8119BF40C8003AE853 /* main.m */; };
 		09833A8619BF40C8003AE853 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09833A8519BF40C8003AE853 /* AppDelegate.m */; };
 		09833A9119BF40C8003AE853 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09833A9019BF40C8003AE853 /* Images.xcassets */; };
-		098DC47719E005C900315F92 /* libBlueBarSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098DC47619E005C900315F92 /* libBlueBarSDK.a */; };
 		09CB04ED19D386FE00E024AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09CB04EC19D386FE00E024AA /* Main.storyboard */; };
+		09E1D6B21A031E61004F3B58 /* libBlueBarSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098DC47619E005C900315F92 /* libBlueBarSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				098DC47719E005C900315F92 /* libBlueBarSDK.a in Frameworks */,
+				09E1D6B21A031E61004F3B58 /* libBlueBarSDK.a in Frameworks */,
 				09833A7819BF40C8003AE853 /* CoreGraphics.framework in Frameworks */,
 				09833A7A19BF40C8003AE853 /* UIKit.framework in Frameworks */,
 				09833A7619BF40C8003AE853 /* Foundation.framework in Frameworks */,
-				06C83185FC4648319F22374D /* libPods-Campaign Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

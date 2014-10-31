@@ -11,5 +11,6 @@
 @interface ApiSession : NSObject
 
 @property (nonatomic, copy) NSString *appSpecificId;
+@property (nonatomic, copy) NSDictionary *userMetadata;
 
 @end
