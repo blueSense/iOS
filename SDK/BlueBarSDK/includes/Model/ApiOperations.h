@@ -15,7 +15,7 @@
 
 @protocol ApiOperationsDelegate <NSObject>
 @optional
-    - (void) authenticated;
+    - (void) authenticationDone;
     - (void) authenticationFailed:(NSString*)reason;
 
     - (void) retrievedBeaconConfiguration:(BeaconConfiguration*)beaconConfiguration forBeacon:(DetectedBeacon*)beacon;

@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "BlueBarSDK.h"
 #import <MBProgressHUD.h>
 
 @interface LoginViewController () < UITextFieldDelegate, ApiOperationsDelegate >
@@ -99,7 +98,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto://contact@bluesensenetworks.com"]];
 }
 
-- (void)authenticated
+- (void) authenticationDone
 {
     NSString *email = self.emailAddress.text;
     NSString *password = self.password.text;

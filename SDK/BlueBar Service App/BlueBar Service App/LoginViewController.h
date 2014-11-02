@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BlueBarSDK.h"
 
-@interface LoginViewController : UIViewController < UITextViewDelegate >
+@interface LoginViewController : UIViewController < UITextViewDelegate, ApiOperationsDelegate >
 
 @property ( strong, nonatomic ) IBOutlet UITextField *emailAddress;
 @property ( strong, nonatomic ) IBOutlet UITextField *password;

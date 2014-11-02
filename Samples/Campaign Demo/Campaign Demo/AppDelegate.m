@@ -10,13 +10,6 @@
 #import "BlueBarSDK.h"
 
 
-@implementation NSURLRequest(DataController)
-+ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host
-{
-    return YES;
-}
-@end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -54,9 +54,9 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                              action:@selector(openSettings)];
-    
+  
     emptyLabel = [[UILabel alloc] initWithFrame:self.tableView.frame];
-    emptyLabel.text = @"No messages received yet, if this takes too long, please check application configuration that you have  provided correct Application Id and Private Key, and also make sure you have setup corresponding campaign actions in ProximitySense.";
+    emptyLabel.text = @"No messages received yet. If this takes too long, please check application configuration is setup correctly with Application Id and Private Key. Also make sure you have setup corresponding campaign actions in ProximitySense.";
     emptyLabel.numberOfLines = 0;
     emptyLabel.textAlignment = NSTextAlignmentCenter;
     emptyLabel.layer.opacity = 0.6;
@@ -69,7 +69,7 @@
     NSString* applicationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"applicationId_preference"];
     NSString* privateKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"privateKey_preference"];
     
-    if ([applicationId empty] || [privateKey empty])
+    if (applicationId == nil || [applicationId empty] || privateKey == nil || [privateKey empty])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Application configuration needed" message:@"You need to specify Application API credentials first!" delegate:self cancelButtonTitle:@"Umm, OK" otherButtonTitles:nil];
         
@@ -129,26 +129,11 @@
     self.appSettingsViewController.navigationItem.hidesBackButton = YES;
     
     [self.navigationController pushViewController:self.appSettingsViewController animated:YES];
-
 }
 
 - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-  
-    NSString* applicationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"applicationId_preference"];
-    NSString* privateKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"privateKey_preference"];
-    
-    if (![applicationId empty] && ![privateKey empty])
-    {
-        [self clearMessages];
-        
-        [self configureSdkWithApplicationId:applicationId andPrivateKey:privateKey];
-    }
-    else
-    {
-        [self.tableView reloadData];
-    }
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation) fromInterfaceOrientation
