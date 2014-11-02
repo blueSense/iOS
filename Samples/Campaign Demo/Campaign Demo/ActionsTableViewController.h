@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IASKAppSettingsViewController.h"
 
-@interface ActionsTableViewController : UITableViewController
+@interface ActionsTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, IASKSettingsDelegate>
+
+@property (nonatomic, retain) IASKAppSettingsViewController *appSettingsViewController;
 
 @end

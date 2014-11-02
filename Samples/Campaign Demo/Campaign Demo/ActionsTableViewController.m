@@ -10,13 +10,22 @@
 #import "ActionsTableViewController.h"
 #import "ActionTableViewCell.h"
 
+#import "BlueBarSDK.h"
 #import "ApiOperations.h"
 #import "ActionBase.h"
 #import "MesageAction.h"
 #import "KeyValueAction.h"
 #import "PresenceAction.h"
 
-@interface ActionsTableViewController () <UITableViewDataSource, UITableViewDelegate>
+@implementation NSString (Empty)
+
+- (BOOL) empty{
+    return ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]length] == 0);
+}
+
+@end
+
+@interface ActionsTableViewController () <UITableViewDataSource, UITableViewDelegate, IASKSettingsDelegate>
 
 @end
 
@@ -24,20 +33,148 @@
 {
 @private
     NSMutableArray *actions;
+    UILabel* emptyLabel;
 }
+
+@synthesize appSettingsViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     actions = [[NSMutableArray alloc] initWithCapacity:10];
 
-    // Register to receive a notification when ProximitySense returns an action
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionReceived:) name:ApiNotification_ActionReceived object:nil];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear All"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(clearMessages)];
+
+    UIImage* btnImage = [UIImage imageNamed:@"gears"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:btnImage
+                                                               landscapeImagePhone:btnImage
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                             action:@selector(openSettings)];
+    
+    emptyLabel = [[UILabel alloc] initWithFrame:self.tableView.frame];
+    emptyLabel.text = @"No messages received yet, if this takes too long, please check application configuration that you have  provided correct Application Id and Private Key, and also make sure you have setup corresponding campaign actions in ProximitySense.";
+    emptyLabel.numberOfLines = 0;
+    emptyLabel.textAlignment = NSTextAlignmentCenter;
+    emptyLabel.layer.opacity = 0.6;
+
+    self.tableView.backgroundView = emptyLabel;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSString* applicationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"applicationId_preference"];
+    NSString* privateKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"privateKey_preference"];
+    
+    if ([applicationId empty] || [privateKey empty])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Application configuration needed" message:@"You need to specify Application API credentials first!" delegate:self cancelButtonTitle:@"Umm, OK" otherButtonTitles:nil];
+        
+        [alert addButtonWithTitle:@"OK"];
+        [alert show];
+        
+        [self openSettings];
+    }
+    else
+    {
+        [self configureSdkWithApplicationId:applicationId andPrivateKey:privateKey];
+    }
+}
+
+#pragma mark - BlueBarSDK configuration
+
+- (void) configureSdkWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)privateKey
+{
+    //#define DEV
+    //#define LOCALHOST
+    
+    // applicationId = @"2ed4c300c1db48349b681f60acfa2448";
+    // privateKey = @"sU5zIcJoB3GI7gBDAvezFpcveFikeLGZp8qILirAfk";
+    NSString *apibaseUrl = @"https://platform.proximitysense.com/api/v1/";
+    
+#ifdef DEV
+    
+    apibaseUrl = @"https://dev-platform.proximitysense.com/api/v1/";
+    
+#endif
+    
+#ifdef LOCALHOST
+    
+    apibaseUrl = @"http://192.168.0.12/BSN.Platform/api/v1/";
+    
+#endif
+    
+    [BlueBarSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
+    [BlueBarSDK Api].baseUrl = apibaseUrl;
+    
+    //appSpecificId is a string value that represents the app's user identity.
+    //Can be email, LinkedIn profile id, twitter handle, UUID etc, in short anything that you use to identify your users.
+    //This value is used in the analytics panel to detect different users and to remember who has proximity activations
+    [BlueBarSDK Api].session.appSpecificId = [[NSUUID alloc]init].UUIDString;
+    
+    //userMetadata is an additional NSDictionary of values, to assign to the specific appUserId. For example, it can contain fields such as
+    // name, last name, email, profile photo url, in short anything you wish to display in the user analytics panel
+    // Those fields can be used subsequently to create sophisticated usage reports and custom proximity actions
+    NSArray *keys = [NSArray arrayWithObjects:@"first_name", @"last_name", @"email", nil];
+    NSArray *objs = [NSArray arrayWithObjects:@"John", @"Doe", @"john_doe@somewhere.com", nil];
+    [BlueBarSDK Api].session.userMetadata = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
+
+    // Register to receive a notification when ProximitySense responds with an actionable result
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionReceived:) name:ApiNotification_ActionReceived object:nil];
+    
+    // Factory Default Blue Sense Networks BlueBar Beacon UUID
+    [[BlueBarSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
+    
+}
+
+
+- (IASKAppSettingsViewController*)appSettingsViewController {
+    if (!appSettingsViewController) {
+        appSettingsViewController = [[IASKAppSettingsViewController alloc] init];
+        appSettingsViewController.delegate = self;
+    }
+    
+    return appSettingsViewController;
+}
+
+- (void)openSettings
+{
+    self.appSettingsViewController.showCreditsFooter = NO;
+    
+    self.appSettingsViewController.showDoneButton = YES;
+    self.appSettingsViewController.neverShowPrivacySettings = YES;
+    self.appSettingsViewController.navigationItem.hidesBackButton = YES;
+    
+    [self.navigationController pushViewController:self.appSettingsViewController animated:YES];
+
+}
+
+- (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController*)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+  
+    NSString* applicationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"applicationId_preference"];
+    NSString* privateKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"privateKey_preference"];
+    
+    if (![applicationId empty] && ![privateKey empty])
+    {
+        [self clearMessages];
+        
+        [self configureSdkWithApplicationId:applicationId andPrivateKey:privateKey];
+    }
+    else
+    {
+        [self.tableView reloadData];
+    }
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation) fromInterfaceOrientation
+{
+    [self.tableView reloadData];
 }
 
 - (void)clearMessages
@@ -96,11 +233,11 @@
     
     [actions addObject:action];
     [[self tableView] reloadData];
+    emptyLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -121,82 +258,5 @@
 
     return cell;
 }
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Retrieve our object to give to our size manager.
-    id action = [actions objectAtIndex:indexPath.row];
-
-    CGFloat height = 60.0f;
-
-    if ([action isKindOfClass:[MessageAction class]])
-    {
-        height = 120.0f;
-    }
-    else
-    if ([action isKindOfClass:[PresenceAction class]])
-    {
-        height = 60.0f;
-    }
-    else
-    if ([action isKindOfClass:[KeyValueAction class]])
-    {
-        height = 160.0f;
-    }
-
-    return height;
-}
-
-// If you have very complex cells or a large number implementing this method speeds up initial load time.
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [ActionTableViewCell estimatedCellHeight];
-}
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -21,36 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    application.applicationIconBadgeNumber = 0;
-
-    // In order to be able to access the ProximitySense platform via the API (and the SDK)
-    // you need to create an application first. To do that, sign in to ProximitySense and go to
-    // API Access/Applications submenu. Use the screen to create an application.
-    // Copy the ApplicationId and the PrivateKey fields into the appropriate variables below:
-    
-    NSString *applicationId = @"PUT APPLICATION ID HERE";
-    NSString *privateKey = @"PUT PRIVATE KEY HERE";
-    
-    [BlueBarSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
-
-    //appSpecificId is a string value that represents the app's user identity.
-    //Can be email, LinkedIn profile id, twitter handle, UUID etc, in short anything that you use to identify your users.
-    //This value is used in the analytics panel to detect different users and to remember who has proximity activations
-    [BlueBarSDK Api].session.appSpecificId = [[NSUUID alloc]init].UUIDString;
-    
-    //userMetadata is an additional NSDictionary of values, to assign to the specific appUserId. For example, it can contain fields such as
-    // name, last name, email, profile photo url, in short anything you wish to display in the user analytics panel
-    // Those fields can be used subsequently to create sophisticated usage reports and custom proximity actions
-    NSArray *keys = [NSArray arrayWithObjects:@"first_name", @"last_name", @"email", nil];
-    NSArray *objs = [NSArray arrayWithObjects:@"John", @"Doe", @"john_doe@somewhere.com", nil];
-    [BlueBarSDK Api].session.userMetadata = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
-
-    // Factory Default Blue Sense Networks BlueBar Beacon UUID
-    [[BlueBarSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
 
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+    
+    application.applicationIconBadgeNumber = 0;
     
     return YES;
 }
