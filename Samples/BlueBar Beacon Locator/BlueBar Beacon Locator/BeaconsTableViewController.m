@@ -82,12 +82,20 @@
         return;
     }
     
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+    {
+        CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
+        if (authStatus < kCLAuthorizationStatusAuthorized)
+            [locationManager requestAlwaysAuthorization];
+    }
+
+    
     NSUUID *nsUuid = [[NSUUID alloc] initWithUUIDString:uuid];
     
-    beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:nsUuid identifier:@"BlueBar Beacon Region"];
-    beaconRegion.notifyEntryStateOnDisplay = NO;
-    beaconRegion.notifyOnEntry = NO;
-    beaconRegion.notifyOnExit = NO;
+    beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:nsUuid identifier:@"BlueBar Beacon Locator Region"];
+    beaconRegion.notifyEntryStateOnDisplay = YES;
+    beaconRegion.notifyOnEntry = YES;
+    beaconRegion.notifyOnExit = YES;
     
     // Tell location manager to start monitoring for the beacon region
     [locationManager startRangingBeaconsInRegion:beaconRegion];
