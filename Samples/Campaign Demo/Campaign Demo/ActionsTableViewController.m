@@ -88,27 +88,7 @@
 
 - (void) configureSdkWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)privateKey
 {
-    //#define DEV
-    //#define LOCALHOST
-    
-    // applicationId = @"2ed4c300c1db48349b681f60acfa2448";
-    // privateKey = @"sU5zIcJoB3GI7gBDAvezFpcveFikeLGZp8qILirAfk";
-    NSString *apibaseUrl = @"https://platform.proximitysense.com/api/v1/";
-    
-#ifdef DEV
-    
-    apibaseUrl = @"https://dev-platform.proximitysense.com/api/v1/";
-    
-#endif
-    
-#ifdef LOCALHOST
-    
-    apibaseUrl = @"http://192.168.0.12/BSN.Platform/api/v1/";
-    
-#endif
-    
     [BlueBarSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
-    [BlueBarSDK Api].baseUrl = apibaseUrl;
     
     //appSpecificId is a string value that represents the app's user identity.
     //Can be email, LinkedIn profile id, twitter handle, UUID etc, in short anything that you use to identify your users.
@@ -126,9 +106,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionReceived:) name:ApiNotification_ActionReceived object:nil];
     
-    // Factory Default Blue Sense Networks BlueBar Beacon UUID
+    // Start ranging for factory default Blue Sense Networks BlueBar Beacon UUID
     [[BlueBarSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
-    
 }
 
 
