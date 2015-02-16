@@ -84,7 +84,8 @@ Pod::Spec.new do |s|
   #
 
   s.public_header_files = "SDK/BlueBarSDK/includes/**/*.h"
-  s.preserve_paths = "SDK/BlueBarSDK/lib/libBlueBarSDK.a"
+  s.preserve_paths = "SDK/BlueBarSDK/**/*.*"
+  s.source_files = "SDK/BlueBarSDK/**/*.h"
   s.vendored_libraries = "SDK/BlueBarSDK/lib/libBlueBarSDK.a"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
