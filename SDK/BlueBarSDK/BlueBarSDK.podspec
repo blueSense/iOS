@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
   s.summary      = "Blue Sense Networks official iOS SDK for BlueBar beacons configuration and ProximitySense integration."
 
   s.description  = <<-DESC
-                   Blue Sense Networks official iOS SDK for BlueBar beacons configuration and ProximitySense integration.
+                   This is the Blue Sense Networks official iOS SDK for BlueBar beacons configuration and ProximitySense integration.
+                   For more information please visit the Knowledge base section.
                    DESC
 
   s.homepage     = "http://BlueSenseNetworks.com"
