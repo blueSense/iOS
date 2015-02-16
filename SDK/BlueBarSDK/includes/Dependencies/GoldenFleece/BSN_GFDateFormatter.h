@@ -14,9 +14,9 @@
  limitations under the License.
  */
 #import <Foundation/Foundation.h>
-#import <ISO8601DateFormatter.h>
+#import "BSN_ISO8601DateFormatter.h"
 
-@interface GFDateFormatter : NSObject
+@interface BSN_GFDateFormatter : NSObject
 + (id) sharedInstance;
-@property (strong, nonatomic) ISO8601DateFormatter *formatter;
+@property (strong, nonatomic) BSN_ISO8601DateFormatter *formatter;
 @end

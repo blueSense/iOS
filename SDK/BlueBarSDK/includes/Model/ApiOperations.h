@@ -11,7 +11,8 @@
 @class DetectedBeacon;
 @class BeaconConfiguration;
 @class ApiCredentials;
-@class ApiSession;
+@class AppUser;
+@class UserProfile;
 
 @protocol ApiOperationsDelegate <NSObject>
 @optional
@@ -31,7 +32,7 @@ extern NSString *ApiNotification_ActionReceived;
     @property (nonatomic, assign) id<ApiOperationsDelegate> apiDelegate;
 
     @property (nonatomic, strong) ApiCredentials *credentials;
-    @property (nonatomic, strong) ApiSession *session;
+    @property (nonatomic, strong) AppUser *appUser;
     @property (nonatomic, copy) NSString *baseUrl;
 
     - (void) requestAuthKeyPairForUser:(NSString*)username withPassword:(NSString*)password;
@@ -40,4 +41,19 @@ extern NSString *ApiNotification_ActionReceived;
 
     - (void) reportBeaconSightings:(NSArray *)beacons;
     - (void) pollForAvailableActionResults;
+
+    - (void) requestForEndpoint: (NSString*)endpoint withResultObject:(id)resultObject onCompletion:(void (^)(id result, NSError* connectionError)) handler ;
+    - (void) requestForEndpoint: (NSString*)endpoint withResultObject:(id)resultObject onCompletion:(void (^)(id result, NSError* connectionError)) handler withCredentials: (ApiCredentials*)credentials;
+
+    - (void) requestForEndpoint: (NSString*)endpoint withObject:(NSObject*)object withResultObject:(id)resultObject onCompletion:(void (^)(id result, NSError* connectionError)) handler;
+    - (void) requestForEndpoint: (NSString*)endpoint withObject:(NSObject*)object withResultObject:(id)resultObject onCompletion:(void (^)(id result, NSError* connectionError)) handler withCredentials: (ApiCredentials*)credentials;
+
+    - (void) requestApplications: (void (^)(NSArray* applications, NSError* connectionError)) onCompletion;
+    - (void) requestApplications: (void (^)(NSArray* applications, NSError* connectionError)) onCompletion withCredentials: (ApiCredentials*)credentials;
+
+    - (void) requestProfile: (void (^)(UserProfile* userProfile, NSError* connectionError)) onCompletion;
+    - (void) requestProfile: (void (^)(UserProfile* userProfile, NSError* connectionError)) onCompletion withCredentials: (ApiCredentials*)credentials;
+
+    - (void) updateAppUser: (AppUser*)appUser;
+    - (void) updateAppUser: (AppUser*)appUser withCredentials: (ApiCredentials*)credentials;
 @end

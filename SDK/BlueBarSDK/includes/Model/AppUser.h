@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ApiSession : NSObject
+@interface AppUser : NSObject
 
 @property (nonatomic, copy) NSString *appSpecificId;
 @property (nonatomic, copy) NSDictionary *userMetadata;

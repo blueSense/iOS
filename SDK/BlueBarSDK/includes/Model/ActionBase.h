@@ -19,5 +19,9 @@
 @property (nonatomic, strong) ZoneEventDetails* zoneEvent;
 @property (nonatomic, strong) Sighting* sighting;
 
-+ (id)parseActionResponse:(ActionResponse *)response;
++ (id) parseActionResponse:(ActionResponse *)response;
+
++ (void) registerCommonActionTypes;
++ (void) registerActionType:(NSString*)typeName withInitializer:(id (^)()) initializer;
+
 @end

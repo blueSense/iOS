@@ -3,11 +3,6 @@
 // Copyright (c) 2014 Blue Sense Networks. All rights reserved.
 //
 
-
-#ifndef __ApiUtility_H_
-#define __ApiUtility_H_
-
-
 @interface ApiUtility : NSObject
 
 + (NSString*)computeSHA256DigestForString:(NSString*)input;
@@ -15,5 +10,3 @@
 + (BOOL)isResponseFailed:(NSURLResponse*)response;
 
 @end
-
-#endif //__ApiUtility_H_

@@ -11,7 +11,7 @@
 #import "Model/DetectedBeacon.h"
 #import "Model/ApiOperations.h"
 #import "Model/ApiCredentials.h"
-#import "Model/ApiSession.h"
+#import "Model/AppUser.h"
 #import "Model/RangingManager.h"
 #import "LE/BeaconConfigurationService.h"
 #import "LE/BeaconDiscovery.h"
@@ -23,6 +23,7 @@
 @class ApiCredentials;
 @class RangingManager;
 
+#define BLUEBARSDK_VERSION @"0.3"
 
 @protocol BlueBarSDKStatusDelegate <NSObject>
 

@@ -15,7 +15,7 @@
  */
 #import <Foundation/Foundation.h>
 
-@interface NSObject (GFJson)
+@interface NSObject (BSN_GFJson)
 - (id)initWithJsonObject:(id)jsonObject;
 - (id)jsonObject;
 @end
