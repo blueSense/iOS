@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Model/BeaconConfiguration.h"
-#import "Model/DetectedBeacon.h"
-#import "Model/ApiOperations.h"
-#import "Model/ApiCredentials.h"
-#import "Model/AppUser.h"
-#import "Model/RangingManager.h"
-#import "LE/BeaconConfigurationService.h"
-#import "LE/BeaconDiscovery.h"
-#import "LE/BeaconCalibration.h"
+#import "BeaconConfiguration.h"
+#import "DetectedBeacon.h"
+#import "ApiOperations.h"
+#import "ApiCredentials.h"
+#import "AppUser.h"
+#import "RangingManager.h"
+#import "BeaconConfigurationService.h"
+#import "BeaconDiscovery.h"
+#import "BeaconCalibration.h"
+#import "ActionBase.h"
+#import "RichContentAction.h"
 
 @class BeaconCalibration;
 @class BeaconDiscovery;
