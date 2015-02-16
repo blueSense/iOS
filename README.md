@@ -1,7 +1,7 @@
 # iOS
 
 
-BlueBar SDK, support code and code samples for iOS. 
+BlueBar SDK, support code and code samples for iOS.
 Copyright 2014 [Blue Sense Networks](http://bluesensenetworks.com)
 
 ## Building
@@ -18,6 +18,14 @@ The SDK folder contains the following projects:
 - BlueBarSDK - SDK for BlueBar beacons configuration and ranging;
 - BlueBar Configuration Utility app - allows for easy integration into existing systems or easy rebranding as your own configuration app
 
+Installation
+-------
+
+The best way to use the SDK is to use [CocoaPods](http://cocoapods.org/). Include the following line into your Podfile
+
+```
+pod 'BlueBarSDK'
+```
 
 
 ## Samples
@@ -34,4 +42,4 @@ Known limitations:
 
 2. BlueBar Beacon Locator - an app that demonstrates simple ranging functionality for the factory default BlueBar Beacon UUID
 
-3. Campaign Demo - app that demonstrates integration with BlueBarSDK in order to run proximity campaigns powered by [ProximitySense](http://ProximitySense.com) in a 3rd party app. 
+3. Campaign Demo - app that demonstrates integration with BlueBarSDK in order to run proximity campaigns powered by [ProximitySense](http://ProximitySense.com) in a 3rd party app.
