@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS", :tag => "0.3" }
+  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -82,9 +82,9 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.public_header_files = "includes/**/*.h"
-  s.preserve_paths = "lib/libBlueBarSDK.a"
-  s.vendored_libraries = "lib/libBlueBarSDK.a"
+  s.public_header_files = "SDK/BlueBarSDK/includes/**/*.h"
+  s.preserve_paths = "SDK/BlueBarSDK/lib/libBlueBarSDK.a"
+  s.vendored_libraries = "SDK/BlueBarSDK/lib/libBlueBarSDK.a"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
