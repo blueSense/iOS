@@ -87,6 +87,10 @@ Pod::Spec.new do |s|
   s.preserve_paths = "SDK/BlueBarSDK/**/*.*"
   s.source_files = "SDK/BlueBarSDK/**/*.h"
   s.vendored_libraries = "SDK/BlueBarSDK/lib/libBlueBarSDK.a"
+#  s.library = 'BlueBarSDK'
+#  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/BlueBarSDK/frameworks' }
+
+  s.library = 'BlueBarSDK'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
