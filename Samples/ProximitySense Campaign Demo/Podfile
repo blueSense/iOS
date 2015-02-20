@@ -1,0 +1,11 @@
+platform :ios, "7.1"
+workspace "ProximitySense Campaign Demo"
+inhibit_all_warnings!
+
+target "ProximitySense Campaign Demo" do
+    pod 'BlueBarSDK'
+    pod 'MBProgressHUD', '~> 0.8'
+    pod 'ZLSwipeableView'
+
+    xcodeproj "ProximitySense Campaign Demo.xcodeproj"
+end
