@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BlueBarSDK"
-  s.version      = "0.4"
+  s.version      = "0.5"
   s.summary      = "Blue Sense Networks official iOS SDK for BlueBar beacons configuration and ProximitySense integration."
 
   s.description  = <<-DESC
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "0.4" }
+  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
