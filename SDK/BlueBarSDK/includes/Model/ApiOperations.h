@@ -19,6 +19,12 @@
     - (void) authenticationDone;
     - (void) authenticationFailed:(NSString*)reason;
 
+    - (void) beaconUpdateDone:(DetectedBeacon*)beacon;
+    - (void) beaconUpdateFailed:(NSString*)reason forBeacon:(DetectedBeacon*)beacon;
+
+    - (void) beaconRegistrationDone:(DetectedBeacon*)beacon;
+    - (void) beaconRegistrationFailed:(NSString*)reason forBeacon:(DetectedBeacon*)beacon;
+
     - (void) retrievedBeaconConfiguration:(BeaconConfiguration*)beaconConfiguration forBeacon:(DetectedBeacon*)beacon;
     - (void) failedToRetrieveBeaconConfigurationForBeacon:(DetectedBeacon *)beacon withError:(NSError*)error;
 @end
@@ -38,6 +44,7 @@ extern NSString *ApiNotification_ActionReceived;
     - (void) requestAuthKeyPairForUser:(NSString*)username withPassword:(NSString*)password;
     - (void) requestBeaconDetails:(DetectedBeacon*)beacon;
     - (void) updateBeaconDetails:(DetectedBeacon*)beacon;
+    - (void) registerBeacon:(DetectedBeacon*)beacon;
 
     - (void) reportBeaconSightings:(NSArray *)beacons;
     - (void) pollForAvailableActionResults;

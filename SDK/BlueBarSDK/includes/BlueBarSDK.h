@@ -25,7 +25,7 @@
 @class ApiCredentials;
 @class RangingManager;
 
-#define BLUEBARSDK_VERSION @"0.4"
+#define BLUEBARSDK_VERSION @"0.5"
 
 @protocol BlueBarSDKStatusDelegate <NSObject>
 

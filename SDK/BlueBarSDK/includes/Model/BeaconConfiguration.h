@@ -11,7 +11,7 @@
 @interface BeaconConfiguration : NSObject
 
 @property (copy, nonatomic) NSString *serial;
-@property (strong, nonatomic) NSNumber *battery;
+@property (strong, nonatomic) NSNumber *batteryLevel;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *pin;
 @property (copy, nonatomic) NSString *uuid;
@@ -27,5 +27,7 @@
 @property (nonatomic) BOOL calibrationChanged;
 
 @property (nonatomic) BOOL isInSync;
+@property (nonatomic) BOOL shouldRefreshBattery;
+@property (nonatomic) BOOL notOwnedByUser;
 
 @end
