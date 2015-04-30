@@ -167,6 +167,21 @@
     emptyLabel.text = @"";
     availableCards++;
     
+    RichContentAction *richContentAction = (RichContentAction *)action;
+    
+    if (richContentAction.sendNotification)
+    {
+        // Schedule the notification
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        
+        localNotification.alertBody = richContentAction.notificationText;
+        localNotification.alertAction = @"ProximitySense Campaign Demo";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+    
     [self.swipeableView loadNextSwipeableViewsIfNeeded];
 }
 
