@@ -176,7 +176,7 @@
         localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
         
         localNotification.alertBody = richContentAction.notificationText;
-        localNotification.alertAction = @"ProximitySense Campaign Demo";
+        localNotification.alertAction = @"view";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
