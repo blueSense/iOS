@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.name         = "ProximitySenseSDK"
   s.version      = "1.0.0"
-  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "ProximitySenseSDK-1.0.0" }
   
   s.summary      = "Blue Sense Networks official iOS SDK for integration with the ProximitySense cloud platform."
   s.description  = <<-DESC
