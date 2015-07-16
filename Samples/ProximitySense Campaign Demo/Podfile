@@ -3,7 +3,7 @@ workspace "ProximitySense Campaign Demo"
 inhibit_all_warnings!
 
 target "ProximitySense Campaign Demo" do
-    pod 'ProximitySenseSDK', :git => 'https://github.com/BlueSenseNetworks/iOS.git', :tag => 'ProximitySenseSDK-1.0.0'
+    pod 'ProximitySenseSDK'
     pod 'MBProgressHUD', '~> 0.8'
     pod 'ZLSwipeableView'
 
