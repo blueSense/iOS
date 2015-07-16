@@ -10,4 +10,23 @@
 
 @implementation ProximitySenseSDK
 
++ (ApiOperations *) Api {
+    return [ApiOperations instance];
+}
+
++ (RangingManager *) Ranging {
+    return [RangingManager instance];
+}
+
++ (void)InitializeWithApplicationId:(NSString *)applicationId andPrivateKey:(NSString *)appPrivateKey
+{
+    [ProximitySenseSDK InitializeWithCredentials:[[ApiCredentials alloc]initWithApplicationId:applicationId andPrivateKey:appPrivateKey]];
+}
+
++ (void)InitializeWithCredentials:(ApiCredentials *)apiCredentials
+{
+    [ProximitySenseSDK Api].credentials = apiCredentials;
+}
+
+
 @end
