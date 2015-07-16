@@ -10,8 +10,9 @@ Pod::Spec.new do |s|
 
   s.name         = "ProximitySenseSDK"
   s.version      = "1.0.0"
+  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "1.0.0" }
+  
   s.summary      = "Blue Sense Networks official iOS SDK for integration with the ProximitySense cloud platform."
-
   s.description  = <<-DESC
                    This is the Blue Sense Networks official iOS SDK for integration with the ProximitySense cloud platform.
                    For more information please visit the Knowledge base section.
@@ -29,15 +30,6 @@ Pod::Spec.new do |s|
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
   # s.osx.deployment_target = "10.7"
-
-
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
-  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
