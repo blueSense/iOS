@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09006A411B5844BD008624DA /* ApiOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A081B5844BD008624DA /* ApiOperations.m */; };
+		09006A421B5844BD008624DA /* ActionBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A0B1B5844BD008624DA /* ActionBase.m */; };
+		09006A431B5844BD008624DA /* ActionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A0D1B5844BD008624DA /* ActionResponse.m */; };
+		09006A441B5844BD008624DA /* ApiCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A0F1B5844BD008624DA /* ApiCredentials.m */; };
+		09006A451B5844BD008624DA /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A111B5844BD008624DA /* Application.m */; };
+		09006A461B5844BD008624DA /* AppUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A131B5844BD008624DA /* AppUser.m */; };
+		09006A471B5844BD008624DA /* Integrations.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A161B5844BD008624DA /* Integrations.m */; };
+		09006A481B5844BD008624DA /* TreasureHuntAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A191B5844BD008624DA /* TreasureHuntAchievement.m */; };
+		09006A491B5844BD008624DA /* TreasureHuntComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */; };
+		09006A4A1B5844BD008624DA /* TreasureHuntLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */; };
+		09006A4B1B5844BD008624DA /* TreasureHuntStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */; };
+		09006A4C1B5844BD008624DA /* RichContentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A211B5844BD008624DA /* RichContentAction.m */; };
+		09006A4D1B5844BD008624DA /* Sighting.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A231B5844BD008624DA /* Sighting.m */; };
+		09006A4E1B5844BD008624DA /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A251B5844BD008624DA /* UserProfile.m */; };
+		09006A4F1B5844BD008624DA /* ZoneEventDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A271B5844BD008624DA /* ZoneEventDetails.m */; };
+		09006A501B5844BD008624DA /* ProximitySenseSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A291B5844BD008624DA /* ProximitySenseSDK.m */; };
+		09006A511B5844BD008624DA /* RangingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A2C1B5844BD008624DA /* RangingManager.m */; };
+		09006A521B5844BD008624DA /* ApiUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A2F1B5844BD008624DA /* ApiUtility.m */; };
+		09006A531B5844BD008624DA /* NSArray+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A311B5844BD008624DA /* NSArray+Transform.m */; };
+		09006A541B5844BD008624DA /* BSN_GFDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A351B5844BD008624DA /* BSN_GFDateFormatter.m */; };
+		09006A551B5844BD008624DA /* NSObject+BSN_GFJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A371B5844BD008624DA /* NSObject+BSN_GFJson.m */; };
+		09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3A1B5844BD008624DA /* BSN_ISO8601DateFormatter.m */; };
+		09006A571B5844BD008624DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3C1B5844BD008624DA /* README.md */; };
+		09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		090069461B581C62008624DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		090069481B581C62008624DA /* libProximitySenseSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libProximitySenseSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09006A071B5844BD008624DA /* ApiOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiOperations.h; sourceTree = "<group>"; };
+		09006A081B5844BD008624DA /* ApiOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiOperations.m; sourceTree = "<group>"; };
+		09006A0A1B5844BD008624DA /* ActionBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBase.h; sourceTree = "<group>"; };
+		09006A0B1B5844BD008624DA /* ActionBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBase.m; sourceTree = "<group>"; };
+		09006A0C1B5844BD008624DA /* ActionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionResponse.h; sourceTree = "<group>"; };
+		09006A0D1B5844BD008624DA /* ActionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionResponse.m; sourceTree = "<group>"; };
+		09006A0E1B5844BD008624DA /* ApiCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiCredentials.h; sourceTree = "<group>"; };
+		09006A0F1B5844BD008624DA /* ApiCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiCredentials.m; sourceTree = "<group>"; };
+		09006A101B5844BD008624DA /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		09006A111B5844BD008624DA /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		09006A121B5844BD008624DA /* AppUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUser.h; sourceTree = "<group>"; };
+		09006A131B5844BD008624DA /* AppUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUser.m; sourceTree = "<group>"; };
+		09006A151B5844BD008624DA /* Integrations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integrations.h; sourceTree = "<group>"; };
+		09006A161B5844BD008624DA /* Integrations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Integrations.m; sourceTree = "<group>"; };
+		09006A181B5844BD008624DA /* TreasureHuntAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntAchievement.h; sourceTree = "<group>"; };
+		09006A191B5844BD008624DA /* TreasureHuntAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntAchievement.m; sourceTree = "<group>"; };
+		09006A1A1B5844BD008624DA /* TreasureHuntComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntComplete.h; sourceTree = "<group>"; };
+		09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntComplete.m; sourceTree = "<group>"; };
+		09006A1C1B5844BD008624DA /* TreasureHuntLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntLocation.h; sourceTree = "<group>"; };
+		09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntLocation.m; sourceTree = "<group>"; };
+		09006A1E1B5844BD008624DA /* TreasureHuntStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntStatus.h; sourceTree = "<group>"; };
+		09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntStatus.m; sourceTree = "<group>"; };
+		09006A201B5844BD008624DA /* RichContentAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichContentAction.h; sourceTree = "<group>"; };
+		09006A211B5844BD008624DA /* RichContentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichContentAction.m; sourceTree = "<group>"; };
+		09006A221B5844BD008624DA /* Sighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sighting.h; sourceTree = "<group>"; };
+		09006A231B5844BD008624DA /* Sighting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sighting.m; sourceTree = "<group>"; };
+		09006A241B5844BD008624DA /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		09006A251B5844BD008624DA /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		09006A261B5844BD008624DA /* ZoneEventDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneEventDetails.h; sourceTree = "<group>"; };
+		09006A271B5844BD008624DA /* ZoneEventDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoneEventDetails.m; sourceTree = "<group>"; };
+		09006A281B5844BD008624DA /* ProximitySenseSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximitySenseSDK.h; sourceTree = "<group>"; };
+		09006A291B5844BD008624DA /* ProximitySenseSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximitySenseSDK.m; sourceTree = "<group>"; };
+		09006A2B1B5844BD008624DA /* RangingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangingManager.h; sourceTree = "<group>"; };
+		09006A2C1B5844BD008624DA /* RangingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangingManager.m; sourceTree = "<group>"; };
+		09006A2E1B5844BD008624DA /* ApiUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiUtility.h; sourceTree = "<group>"; };
+		09006A2F1B5844BD008624DA /* ApiUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiUtility.m; sourceTree = "<group>"; };
+		09006A301B5844BD008624DA /* NSArray+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Transform.h"; sourceTree = "<group>"; };
+		09006A311B5844BD008624DA /* NSArray+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Transform.m"; sourceTree = "<group>"; };
+		09006A341B5844BD008624DA /* BSN_GFDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSN_GFDateFormatter.h; sourceTree = "<group>"; };
+		09006A351B5844BD008624DA /* BSN_GFDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSN_GFDateFormatter.m; sourceTree = "<group>"; };
+		09006A361B5844BD008624DA /* NSObject+BSN_GFJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BSN_GFJson.h"; sourceTree = "<group>"; };
+		09006A371B5844BD008624DA /* NSObject+BSN_GFJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BSN_GFJson.m"; sourceTree = "<group>"; };
+		09006A391B5844BD008624DA /* BSN_ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSN_ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		09006A3A1B5844BD008624DA /* BSN_ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSN_ISO8601DateFormatter.m; sourceTree = "<group>"; };
+		09006A3B1B5844BD008624DA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		09006A3C1B5844BD008624DA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		09006A3E1B5844BD008624DA /* NSDate+BSN_Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BSN_Helper.h"; sourceTree = "<group>"; };
+		09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BSN_Helper.m"; sourceTree = "<group>"; };
+		09006A401B5844BD008624DA /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		090069451B581C62008624DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0900693F1B581C62008624DA = {
+			isa = PBXGroup;
+			children = (
+				0900694A1B581C62008624DA /* ProximitySenseSDK */,
+				090069491B581C62008624DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		090069491B581C62008624DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				090069481B581C62008624DA /* libProximitySenseSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0900694A1B581C62008624DA /* ProximitySenseSDK */ = {
+			isa = PBXGroup;
+			children = (
+				09006A061B5844BD008624DA /* Api */,
+				09006A281B5844BD008624DA /* ProximitySenseSDK.h */,
+				09006A291B5844BD008624DA /* ProximitySenseSDK.m */,
+				09006A2A1B5844BD008624DA /* Ranging */,
+				09006A2D1B5844BD008624DA /* Util */,
+				09006A321B5844BD008624DA /* Dependencies */,
+			);
+			path = ProximitySenseSDK;
+			sourceTree = "<group>";
+		};
+		09006A061B5844BD008624DA /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				09006A071B5844BD008624DA /* ApiOperations.h */,
+				09006A081B5844BD008624DA /* ApiOperations.m */,
+				09006A091B5844BD008624DA /* Model */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		09006A091B5844BD008624DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09006A0A1B5844BD008624DA /* ActionBase.h */,
+				09006A0B1B5844BD008624DA /* ActionBase.m */,
+				09006A0C1B5844BD008624DA /* ActionResponse.h */,
+				09006A0D1B5844BD008624DA /* ActionResponse.m */,
+				09006A0E1B5844BD008624DA /* ApiCredentials.h */,
+				09006A0F1B5844BD008624DA /* ApiCredentials.m */,
+				09006A101B5844BD008624DA /* Application.h */,
+				09006A111B5844BD008624DA /* Application.m */,
+				09006A121B5844BD008624DA /* AppUser.h */,
+				09006A131B5844BD008624DA /* AppUser.m */,
+				09006A141B5844BD008624DA /* Integrations */,
+				09006A201B5844BD008624DA /* RichContentAction.h */,
+				09006A211B5844BD008624DA /* RichContentAction.m */,
+				09006A221B5844BD008624DA /* Sighting.h */,
+				09006A231B5844BD008624DA /* Sighting.m */,
+				09006A241B5844BD008624DA /* UserProfile.h */,
+				09006A251B5844BD008624DA /* UserProfile.m */,
+				09006A261B5844BD008624DA /* ZoneEventDetails.h */,
+				09006A271B5844BD008624DA /* ZoneEventDetails.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09006A141B5844BD008624DA /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				09006A151B5844BD008624DA /* Integrations.h */,
+				09006A161B5844BD008624DA /* Integrations.m */,
+				09006A171B5844BD008624DA /* TreasureHunt */,
+			);
+			path = Integrations;
+			sourceTree = "<group>";
+		};
+		09006A171B5844BD008624DA /* TreasureHunt */ = {
+			isa = PBXGroup;
+			children = (
+				09006A181B5844BD008624DA /* TreasureHuntAchievement.h */,
+				09006A191B5844BD008624DA /* TreasureHuntAchievement.m */,
+				09006A1A1B5844BD008624DA /* TreasureHuntComplete.h */,
+				09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */,
+				09006A1C1B5844BD008624DA /* TreasureHuntLocation.h */,
+				09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */,
+				09006A1E1B5844BD008624DA /* TreasureHuntStatus.h */,
+				09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */,
+			);
+			path = TreasureHunt;
+			sourceTree = "<group>";
+		};
+		09006A2A1B5844BD008624DA /* Ranging */ = {
+			isa = PBXGroup;
+			children = (
+				09006A2B1B5844BD008624DA /* RangingManager.h */,
+				09006A2C1B5844BD008624DA /* RangingManager.m */,
+			);
+			path = Ranging;
+			sourceTree = "<group>";
+		};
+		09006A2D1B5844BD008624DA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				09006A2E1B5844BD008624DA /* ApiUtility.h */,
+				09006A2F1B5844BD008624DA /* ApiUtility.m */,
+				09006A301B5844BD008624DA /* NSArray+Transform.h */,
+				09006A311B5844BD008624DA /* NSArray+Transform.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		09006A321B5844BD008624DA /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				09006A331B5844BD008624DA /* GoldenFleece */,
+				09006A381B5844BD008624DA /* ISO8601DateFormatter */,
+				09006A3D1B5844BD008624DA /* NSDate+Helper */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		09006A331B5844BD008624DA /* GoldenFleece */ = {
+			isa = PBXGroup;
+			children = (
+				09006A341B5844BD008624DA /* BSN_GFDateFormatter.h */,
+				09006A351B5844BD008624DA /* BSN_GFDateFormatter.m */,
+				09006A361B5844BD008624DA /* NSObject+BSN_GFJson.h */,
+				09006A371B5844BD008624DA /* NSObject+BSN_GFJson.m */,
+			);
+			path = GoldenFleece;
+			sourceTree = "<group>";
+		};
+		09006A381B5844BD008624DA /* ISO8601DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				09006A391B5844BD008624DA /* BSN_ISO8601DateFormatter.h */,
+				09006A3A1B5844BD008624DA /* BSN_ISO8601DateFormatter.m */,
+				09006A3B1B5844BD008624DA /* LICENSE.txt */,
+				09006A3C1B5844BD008624DA /* README.md */,
+			);
+			path = ISO8601DateFormatter;
+			sourceTree = "<group>";
+		};
+		09006A3D1B5844BD008624DA /* NSDate+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				09006A3E1B5844BD008624DA /* NSDate+BSN_Helper.h */,
+				09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */,
+				09006A401B5844BD008624DA /* README.textile */,
+			);
+			path = "NSDate+Helper";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		090069471B581C62008624DA /* ProximitySenseSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0900695C1B581C62008624DA /* Build configuration list for PBXNativeTarget "ProximitySenseSDK" */;
+			buildPhases = (
+				090069441B581C62008624DA /* Sources */,
+				090069451B581C62008624DA /* Frameworks */,
+				090069461B581C62008624DA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProximitySenseSDK;
+			productName = ProximitySenseSDK;
+			productReference = 090069481B581C62008624DA /* libProximitySenseSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		090069401B581C62008624DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Blue Sense Networks";
+				TargetAttributes = {
+					090069471B581C62008624DA = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 090069431B581C62008624DA /* Build configuration list for PBXProject "ProximitySenseSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0900693F1B581C62008624DA;
+			productRefGroup = 090069491B581C62008624DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				090069471B581C62008624DA /* ProximitySenseSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		090069441B581C62008624DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09006A491B5844BD008624DA /* TreasureHuntComplete.m in Sources */,
+				09006A461B5844BD008624DA /* AppUser.m in Sources */,
+				09006A421B5844BD008624DA /* ActionBase.m in Sources */,
+				09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */,
+				09006A501B5844BD008624DA /* ProximitySenseSDK.m in Sources */,
+				09006A411B5844BD008624DA /* ApiOperations.m in Sources */,
+				09006A541B5844BD008624DA /* BSN_GFDateFormatter.m in Sources */,
+				09006A511B5844BD008624DA /* RangingManager.m in Sources */,
+				09006A571B5844BD008624DA /* README.md in Sources */,
+				09006A4E1B5844BD008624DA /* UserProfile.m in Sources */,
+				09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */,
+				09006A4A1B5844BD008624DA /* TreasureHuntLocation.m in Sources */,
+				09006A4C1B5844BD008624DA /* RichContentAction.m in Sources */,
+				09006A431B5844BD008624DA /* ActionResponse.m in Sources */,
+				09006A471B5844BD008624DA /* Integrations.m in Sources */,
+				09006A451B5844BD008624DA /* Application.m in Sources */,
+				09006A531B5844BD008624DA /* NSArray+Transform.m in Sources */,
+				09006A4F1B5844BD008624DA /* ZoneEventDetails.m in Sources */,
+				09006A441B5844BD008624DA /* ApiCredentials.m in Sources */,
+				09006A4D1B5844BD008624DA /* Sighting.m in Sources */,
+				09006A521B5844BD008624DA /* ApiUtility.m in Sources */,
+				09006A481B5844BD008624DA /* TreasureHuntAchievement.m in Sources */,
+				09006A4B1B5844BD008624DA /* TreasureHuntStatus.m in Sources */,
+				09006A551B5844BD008624DA /* NSObject+BSN_GFJson.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0900695A1B581C62008624DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+					arm64,
+					armv7,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0900695B1B581C62008624DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+					arm64,
+					armv7,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0900695D1B581C62008624DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0900695E1B581C62008624DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		090069431B581C62008624DA /* Build configuration list for PBXProject "ProximitySenseSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0900695A1B581C62008624DA /* Debug */,
+				0900695B1B581C62008624DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0900695C1B581C62008624DA /* Build configuration list for PBXNativeTarget "ProximitySenseSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0900695D1B581C62008624DA /* Debug */,
+				0900695E1B581C62008624DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 090069401B581C62008624DA /* Project object */;
+}
