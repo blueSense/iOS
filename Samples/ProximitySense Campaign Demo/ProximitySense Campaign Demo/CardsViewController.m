@@ -10,7 +10,7 @@
 #import "ZLSwipeableView.h"
 #import "CardView.h"
 #import "ApiConnector.h"
-#import "BlueBarSDK.h"
+#import "ProximitySenseSDK.h"
 #import "ApiOperations.h"
 #import "ActionBase.h"
 #import "Application.h"

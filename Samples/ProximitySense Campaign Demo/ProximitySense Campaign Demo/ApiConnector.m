@@ -9,7 +9,7 @@
 #import "ApiConnector.h"
 #import "AppDelegate.h"
 
-#import "BlueBarSDK.h"
+#import "ProximitySenseSDK.h"
 #import "ApiOperations.h"
 #import "ActionBase.h"
 #import "Application.h"
@@ -44,7 +44,7 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:ApiNotification_ActionReceived];
     
-    [[BlueBarSDK Ranging] stop];
+    [[ProximitySenseSDK Ranging] stop];
 }
 
 - (void)userSignedIn: (NSNotification*)notification
@@ -56,12 +56,12 @@
 
 - (void) configureSdkWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)privateKey
 {
-    [BlueBarSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
+    [ProximitySenseSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
 
-    [[BlueBarSDK Api] requestProfile:^(UserProfile* profile, NSError* error)
+    [[ProximitySenseSDK Api] requestProfile:^(UserProfile* profile, NSError* error)
      {
-         [BlueBarSDK Api].appUser.appSpecificId = profile.entityId;
-         [BlueBarSDK Api].appUser.userMetadata = [NSDictionary dictionaryWithObjectsAndKeys:
+         [ProximitySenseSDK Api].appUser.appSpecificId = profile.entityId;
+         [ProximitySenseSDK Api].appUser.userMetadata = [NSDictionary dictionaryWithObjectsAndKeys:
                                                   profile.entityId ?: [NSNull null], @"id",
                                                   profile.screenName ?: [NSNull null], @"screenName",
                                                   profile.profileImageUrl ?: [NSNull null], @"profileImageUrl",
@@ -78,9 +78,9 @@
 
 -(void)loadApplications
 {
-    [[BlueBarSDK Ranging] stop];
+    [[ProximitySenseSDK Ranging] stop];
     
-    [[BlueBarSDK Api] requestApplications:^(NSArray* apps, NSError* error)
+    [[ProximitySenseSDK Api] requestApplications:^(NSArray* apps, NSError* error)
      {
          self.applications = apps;
          [[NSNotificationCenter defaultCenter] postNotificationName:AppNotification_ApplicationsLoaded object:nil];
@@ -89,9 +89,9 @@
 
 - (void) startForApp:(Application*)app
 {
-    [BlueBarSDK InitializeWithApplicationId:app.clientId andPrivateKey:app.privateKey];
+    [ProximitySenseSDK InitializeWithApplicationId:app.clientId andPrivateKey:app.privateKey];
     
-    [[BlueBarSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
+    [[ProximitySenseSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
 }
 
 @end

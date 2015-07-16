@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
-#import "BlueBarSDK.h"
+#import "ProximitySenseSDK.h"
 
 #import <MBProgressHUD.h>
 
@@ -51,7 +51,7 @@
     self.password.delegate = self;
     self.password.text = loginPassword;
     
-    [[BlueBarSDK Api] setApiDelegate:self];
+    [[ProximitySenseSDK Api] setApiDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,7 +91,7 @@
     NSString *username = self.emailAddress.text;
     NSString *password = self.password.text;
     
-    [[BlueBarSDK Api] requestAuthKeyPairForUser:username withPassword:password];
+    [[ProximitySenseSDK Api] requestAuthKeyPairForUser:username withPassword:password];
 }
 
 - (void) authenticationDone
@@ -109,7 +109,7 @@
     
     [self performSegueWithIdentifier:@"authenticated" sender:self];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:AppNotification_UserSignedIn object:[BlueBarSDK Api].credentials];
+    [[NSNotificationCenter defaultCenter] postNotificationName:AppNotification_UserSignedIn object:[ProximitySenseSDK Api].credentials];
 }
 
 - (void)authenticationFailed:(NSString *)reason

@@ -1,0 +1,1 @@
+lipo -create libProximitySenseSDK-device.a libProximitySenseSDK-simulator.a -output libProximitySenseSDK.a

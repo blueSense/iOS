@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BlueBarSDK.h"
+#import "ProximitySenseSDK.h"
 
 @interface LoginViewController : UIViewController < UITextViewDelegate, ApiOperationsDelegate >
 

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BlueBarSDK.h"
+#import "ProximitySenseSDK.h"
 #import "ApiConnector.h"
 
 
@@ -44,7 +44,7 @@ NSString* AppNotification_ApplicationsLoaded = @"AppNotification_ApplicationsLoa
 {
     NSLog(@"Starting background fetch");
     
-    [[BlueBarSDK Ranging] lookAroundFor:20 completion:completionHandler];
+    [[ProximitySenseSDK Ranging] lookAroundFor:20 completion:completionHandler];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
