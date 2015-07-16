@@ -30,6 +30,7 @@ typedef void(^BackgroundCompletionHandler)(UIBackgroundFetchResult);
         if (_instance == nil)
         {
             _instance = [[self alloc] init];
+            _instance.canPromptUserForLocationServicesAuthorization = YES;
         }
     }
 
