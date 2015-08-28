@@ -11,6 +11,9 @@
 #import "TreasureHuntAchievement.h"
 #import "TreasureHuntComplete.h"
 
+#import "ContentManagement.h"
+#import "AudienceMonitor.h"
+
 @implementation Integrations
 
 + (void) registerCommonActionTypes
@@ -24,6 +27,29 @@
                    withInitializer:^(){
                        return [[TreasureHuntComplete alloc] init];
                    }];
+}
+
++ (Integrations *) instance
+{
+    static Integrations *_instance = nil;
+    
+    @synchronized (self)
+    {
+        if (_instance == nil)
+        {
+            _instance = [[self alloc] init];
+        }
+    }
+    
+    return _instance;
+}
+
++ (ContentManagement *) ContentManagement {
+    return [ContentManagement instance];
+}
+
++ (AudienceMonitor *) AudienceMonitor {
+    return [AudienceMonitor instance];
 }
 
 @end

@@ -18,6 +18,10 @@
     return [RangingManager instance];
 }
 
++ (Integrations *) Integrations {
+    return [Integrations instance];
+}
+
 + (void)InitializeWithApplicationId:(NSString *)applicationId andPrivateKey:(NSString *)appPrivateKey
 {
     [ProximitySenseSDK InitializeWithCredentials:[[ApiCredentials alloc]initWithApplicationId:applicationId andPrivateKey:appPrivateKey]];

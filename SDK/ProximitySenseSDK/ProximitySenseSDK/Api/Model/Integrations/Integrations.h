@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class ContentManagement;
+@class AudienceMonitor;
+
 @interface Integrations : NSObject
 
 + (void) registerCommonActionTypes;
+
++ (Integrations *) instance;
+
++ (ContentManagement*) ContentManagement;
++ (AudienceMonitor*) AudienceMonitor;
 
 @end
