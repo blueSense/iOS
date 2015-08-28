@@ -27,8 +27,6 @@
     return _instance;
 }
 
-
-
 - (void) sendRequest:(void (^)(NSError *))onCompletion
 {
     [[ProximitySenseSDK Api] requestForEndpoint:@"integrations/audienceMonitor/requests" withResultObject:[NSObject alloc]
