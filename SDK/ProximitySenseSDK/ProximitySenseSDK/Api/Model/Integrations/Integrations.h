@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class ContentManagement;
-@class AudienceMonitor;
+#import "ContentManagement.h"
+#import "AudienceMonitor.h"
 
 @interface Integrations : NSObject
 
