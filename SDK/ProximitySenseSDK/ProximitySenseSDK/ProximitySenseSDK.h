@@ -13,20 +13,20 @@
 #import "RangingManager.h"
 #import "ActionBase.h"
 #import "RichContentAction.h"
-#import "Integrations.h"
+#import "Extensions.h"
 
 @class ApiOperations;
 @class ApiCredentials;
 @class RangingManager;
 
-#define PROXIMITYSENSESDK_VERSION @"1.1.1"
+#define PROXIMITYSENSESDK_VERSION @"1.2.0"
 
 @interface ProximitySenseSDK : NSObject
 
 + (ApiOperations*) Api;
 + (RangingManager*) Ranging;
 
-+ (Integrations*) Integrations;
++ (Extensions*) Extensions;
 
 + (void) InitializeWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)appPrivateKey;
 + (void) InitializeWithCredentials:(ApiCredentials*)apiCredentials;

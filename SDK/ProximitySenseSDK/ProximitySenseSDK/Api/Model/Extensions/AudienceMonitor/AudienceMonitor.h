@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SendMessageRequest.h"
 
 @interface AudienceMonitor : NSObject
 
 + (AudienceMonitor *) instance;
 
-- (void) sendRequest: (void (^)(NSError* connectionError)) onCompletion;
+- (void) sendMessage:(SendMessageRequest*) messageRequest;
+- (void) sendMessage:(SendMessageRequest*) messageRequest withCompletion:(void (^)(NSError *))onCompletion;
 
 @end

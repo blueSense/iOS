@@ -18,8 +18,8 @@
     return [RangingManager instance];
 }
 
-+ (Integrations *) Integrations {
-    return [Integrations instance];
++ (Extensions *) Extensions {
+    return [Extensions instance];
 }
 
 + (void)InitializeWithApplicationId:(NSString *)applicationId andPrivateKey:(NSString *)appPrivateKey

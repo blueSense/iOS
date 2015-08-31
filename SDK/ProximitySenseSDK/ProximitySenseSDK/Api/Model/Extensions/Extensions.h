@@ -10,11 +10,11 @@
 #import "ContentManagement.h"
 #import "AudienceMonitor.h"
 
-@interface Integrations : NSObject
+@interface Extensions : NSObject
 
 + (void) registerCommonActionTypes;
 
-+ (Integrations *) instance;
++ (Extensions *) instance;
 
 - (ContentManagement*) ContentManagement;
 - (AudienceMonitor*) AudienceMonitor;

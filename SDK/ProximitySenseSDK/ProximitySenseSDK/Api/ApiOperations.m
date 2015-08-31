@@ -18,7 +18,7 @@
 #import "RangingManager.h"
 #import "ActionBase.h"
 #import "ActionResponse.h"
-#import "Integrations.h"
+#import "Extensions.h"
 #import "Application.h"
 #import "UserProfile.h"
 
@@ -103,7 +103,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
         sdkPlatformAndVersion = [NSString stringWithFormat:@"%@ %@ - %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion, PROXIMITYSENSESDK_VERSION];
         
         [ActionBase registerCommonActionTypes];
-        [Integrations registerCommonActionTypes];
+        [Extensions registerCommonActionTypes];
     }
     
     return self;

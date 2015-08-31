@@ -13,11 +13,6 @@
 		09006A441B5844BD008624DA /* ApiCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A0F1B5844BD008624DA /* ApiCredentials.m */; };
 		09006A451B5844BD008624DA /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A111B5844BD008624DA /* Application.m */; };
 		09006A461B5844BD008624DA /* AppUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A131B5844BD008624DA /* AppUser.m */; };
-		09006A471B5844BD008624DA /* Integrations.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A161B5844BD008624DA /* Integrations.m */; };
-		09006A481B5844BD008624DA /* TreasureHuntAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A191B5844BD008624DA /* TreasureHuntAchievement.m */; };
-		09006A491B5844BD008624DA /* TreasureHuntComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */; };
-		09006A4A1B5844BD008624DA /* TreasureHuntLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */; };
-		09006A4B1B5844BD008624DA /* TreasureHuntStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */; };
 		09006A4C1B5844BD008624DA /* RichContentAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A211B5844BD008624DA /* RichContentAction.m */; };
 		09006A4D1B5844BD008624DA /* Sighting.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A231B5844BD008624DA /* Sighting.m */; };
 		09006A4E1B5844BD008624DA /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A251B5844BD008624DA /* UserProfile.m */; };
@@ -31,10 +26,16 @@
 		09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3A1B5844BD008624DA /* BSN_ISO8601DateFormatter.m */; };
 		09006A571B5844BD008624DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3C1B5844BD008624DA /* README.md */; };
 		09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */; };
-		09BF7D341B8FE62E008B8B8C /* ContentManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BF7D331B8FE62E008B8B8C /* ContentManagement.m */; };
-		09BF7D371B8FE9BC008B8B8C /* GetPublicationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BF7D361B8FE9BC008B8B8C /* GetPublicationsRequest.m */; };
-		09BF7D3A1B8FEB6A008B8B8C /* Publication.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BF7D391B8FEB6A008B8B8C /* Publication.m */; };
-		09BF7D3E1B8FF109008B8B8C /* AudienceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 09BF7D3D1B8FF109008B8B8C /* AudienceMonitor.m */; };
+		097336921B94989D004E9B59 /* Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336911B94989D004E9B59 /* Extensions.m */; };
+		0973369B1B9498B9004E9B59 /* TreasureHuntAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336951B9498B9004E9B59 /* TreasureHuntAchievement.m */; };
+		0973369C1B9498B9004E9B59 /* TreasureHuntComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336971B9498B9004E9B59 /* TreasureHuntComplete.m */; };
+		0973369D1B9498B9004E9B59 /* TreasureHuntLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336981B9498B9004E9B59 /* TreasureHuntLocation.m */; };
+		0973369E1B9498B9004E9B59 /* TreasureHuntStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 0973369A1B9498B9004E9B59 /* TreasureHuntStatus.m */; };
+		097336A51B9498C5004E9B59 /* ContentManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0973369F1B9498C5004E9B59 /* ContentManagement.m */; };
+		097336A61B9498C5004E9B59 /* Publication.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336A01B9498C5004E9B59 /* Publication.m */; };
+		097336A71B9498C5004E9B59 /* GetPublicationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336A31B9498C5004E9B59 /* GetPublicationsRequest.m */; };
+		097336AC1B9498D4004E9B59 /* AudienceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336A91B9498D4004E9B59 /* AudienceMonitor.m */; };
+		097336AD1B9498D4004E9B59 /* SendMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336AB1B9498D4004E9B59 /* SendMessageRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,16 +64,6 @@
 		09006A111B5844BD008624DA /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		09006A121B5844BD008624DA /* AppUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUser.h; sourceTree = "<group>"; };
 		09006A131B5844BD008624DA /* AppUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUser.m; sourceTree = "<group>"; };
-		09006A151B5844BD008624DA /* Integrations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integrations.h; sourceTree = "<group>"; };
-		09006A161B5844BD008624DA /* Integrations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Integrations.m; sourceTree = "<group>"; };
-		09006A181B5844BD008624DA /* TreasureHuntAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntAchievement.h; sourceTree = "<group>"; };
-		09006A191B5844BD008624DA /* TreasureHuntAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntAchievement.m; sourceTree = "<group>"; };
-		09006A1A1B5844BD008624DA /* TreasureHuntComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntComplete.h; sourceTree = "<group>"; };
-		09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntComplete.m; sourceTree = "<group>"; };
-		09006A1C1B5844BD008624DA /* TreasureHuntLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntLocation.h; sourceTree = "<group>"; };
-		09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntLocation.m; sourceTree = "<group>"; };
-		09006A1E1B5844BD008624DA /* TreasureHuntStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreasureHuntStatus.h; sourceTree = "<group>"; };
-		09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreasureHuntStatus.m; sourceTree = "<group>"; };
 		09006A201B5844BD008624DA /* RichContentAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichContentAction.h; sourceTree = "<group>"; };
 		09006A211B5844BD008624DA /* RichContentAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichContentAction.m; sourceTree = "<group>"; };
 		09006A221B5844BD008624DA /* Sighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sighting.h; sourceTree = "<group>"; };
@@ -100,14 +91,26 @@
 		09006A3E1B5844BD008624DA /* NSDate+BSN_Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BSN_Helper.h"; sourceTree = "<group>"; };
 		09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BSN_Helper.m"; sourceTree = "<group>"; };
 		09006A401B5844BD008624DA /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
-		09BF7D311B8FE5AC008B8B8C /* ContentManagement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ContentManagement.h; path = ContentManagement/ContentManagement.h; sourceTree = "<group>"; };
-		09BF7D331B8FE62E008B8B8C /* ContentManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentManagement.m; path = ContentManagement/ContentManagement.m; sourceTree = "<group>"; };
-		09BF7D351B8FE983008B8B8C /* GetPublicationsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GetPublicationsRequest.h; path = ContentManagement/GetPublicationsRequest.h; sourceTree = "<group>"; };
-		09BF7D361B8FE9BC008B8B8C /* GetPublicationsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPublicationsRequest.m; path = ContentManagement/GetPublicationsRequest.m; sourceTree = "<group>"; };
-		09BF7D381B8FEB36008B8B8C /* Publication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Publication.h; path = ContentManagement/Publication.h; sourceTree = "<group>"; };
-		09BF7D391B8FEB6A008B8B8C /* Publication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Publication.m; path = ContentManagement/Publication.m; sourceTree = "<group>"; };
-		09BF7D3B1B8FF04D008B8B8C /* AudienceMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AudienceMonitor.h; path = AudienceMonitor/AudienceMonitor.h; sourceTree = "<group>"; };
-		09BF7D3D1B8FF109008B8B8C /* AudienceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudienceMonitor.m; path = AudienceMonitor/AudienceMonitor.m; sourceTree = "<group>"; };
+		097336901B94989D004E9B59 /* Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Extensions.h; path = ProximitySenseSDK/Api/Model/Extensions/Extensions.h; sourceTree = SOURCE_ROOT; };
+		097336911B94989D004E9B59 /* Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Extensions.m; path = ProximitySenseSDK/Api/Model/Extensions/Extensions.m; sourceTree = SOURCE_ROOT; };
+		097336931B9498B9004E9B59 /* TreasureHuntLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreasureHuntLocation.h; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntLocation.h; sourceTree = SOURCE_ROOT; };
+		097336941B9498B9004E9B59 /* TreasureHuntAchievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreasureHuntAchievement.h; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntAchievement.h; sourceTree = SOURCE_ROOT; };
+		097336951B9498B9004E9B59 /* TreasureHuntAchievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreasureHuntAchievement.m; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntAchievement.m; sourceTree = SOURCE_ROOT; };
+		097336961B9498B9004E9B59 /* TreasureHuntComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreasureHuntComplete.h; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntComplete.h; sourceTree = SOURCE_ROOT; };
+		097336971B9498B9004E9B59 /* TreasureHuntComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreasureHuntComplete.m; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntComplete.m; sourceTree = SOURCE_ROOT; };
+		097336981B9498B9004E9B59 /* TreasureHuntLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreasureHuntLocation.m; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntLocation.m; sourceTree = SOURCE_ROOT; };
+		097336991B9498B9004E9B59 /* TreasureHuntStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreasureHuntStatus.h; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntStatus.h; sourceTree = SOURCE_ROOT; };
+		0973369A1B9498B9004E9B59 /* TreasureHuntStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreasureHuntStatus.m; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntStatus.m; sourceTree = SOURCE_ROOT; };
+		0973369F1B9498C5004E9B59 /* ContentManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentManagement.m; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/ContentManagement.m; sourceTree = SOURCE_ROOT; };
+		097336A01B9498C5004E9B59 /* Publication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Publication.m; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/Publication.m; sourceTree = SOURCE_ROOT; };
+		097336A11B9498C5004E9B59 /* ContentManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentManagement.h; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/ContentManagement.h; sourceTree = SOURCE_ROOT; };
+		097336A21B9498C5004E9B59 /* GetPublicationsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPublicationsRequest.h; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/GetPublicationsRequest.h; sourceTree = SOURCE_ROOT; };
+		097336A31B9498C5004E9B59 /* GetPublicationsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetPublicationsRequest.m; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/GetPublicationsRequest.m; sourceTree = SOURCE_ROOT; };
+		097336A41B9498C5004E9B59 /* Publication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Publication.h; path = ProximitySenseSDK/Api/Model/Extensions/ContentManagement/Publication.h; sourceTree = SOURCE_ROOT; };
+		097336A81B9498D4004E9B59 /* AudienceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudienceMonitor.h; path = ProximitySenseSDK/Api/Model/Extensions/AudienceMonitor/AudienceMonitor.h; sourceTree = SOURCE_ROOT; };
+		097336A91B9498D4004E9B59 /* AudienceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudienceMonitor.m; path = ProximitySenseSDK/Api/Model/Extensions/AudienceMonitor/AudienceMonitor.m; sourceTree = SOURCE_ROOT; };
+		097336AA1B9498D4004E9B59 /* SendMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMessageRequest.h; path = ProximitySenseSDK/Api/Model/Extensions/AudienceMonitor/SendMessageRequest.h; sourceTree = SOURCE_ROOT; };
+		097336AB1B9498D4004E9B59 /* SendMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMessageRequest.m; path = ProximitySenseSDK/Api/Model/Extensions/AudienceMonitor/SendMessageRequest.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +176,7 @@
 				09006A111B5844BD008624DA /* Application.m */,
 				09006A121B5844BD008624DA /* AppUser.h */,
 				09006A131B5844BD008624DA /* AppUser.m */,
-				09006A141B5844BD008624DA /* Integrations */,
+				09006A141B5844BD008624DA /* Extensions */,
 				09006A201B5844BD008624DA /* RichContentAction.h */,
 				09006A211B5844BD008624DA /* RichContentAction.m */,
 				09006A221B5844BD008624DA /* Sighting.h */,
@@ -186,29 +189,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		09006A141B5844BD008624DA /* Integrations */ = {
+		09006A141B5844BD008624DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				09006A151B5844BD008624DA /* Integrations.h */,
-				09006A161B5844BD008624DA /* Integrations.m */,
+				097336901B94989D004E9B59 /* Extensions.h */,
+				097336911B94989D004E9B59 /* Extensions.m */,
 				09006A171B5844BD008624DA /* TreasureHunt */,
 				09BF7D321B8FE5F9008B8B8C /* ContentManagement */,
 				09BF7D3C1B8FF080008B8B8C /* AudienceMonitor */,
 			);
+			name = Extensions;
 			path = Integrations;
 			sourceTree = "<group>";
 		};
 		09006A171B5844BD008624DA /* TreasureHunt */ = {
 			isa = PBXGroup;
 			children = (
-				09006A181B5844BD008624DA /* TreasureHuntAchievement.h */,
-				09006A191B5844BD008624DA /* TreasureHuntAchievement.m */,
-				09006A1A1B5844BD008624DA /* TreasureHuntComplete.h */,
-				09006A1B1B5844BD008624DA /* TreasureHuntComplete.m */,
-				09006A1C1B5844BD008624DA /* TreasureHuntLocation.h */,
-				09006A1D1B5844BD008624DA /* TreasureHuntLocation.m */,
-				09006A1E1B5844BD008624DA /* TreasureHuntStatus.h */,
-				09006A1F1B5844BD008624DA /* TreasureHuntStatus.m */,
+				097336931B9498B9004E9B59 /* TreasureHuntLocation.h */,
+				097336941B9498B9004E9B59 /* TreasureHuntAchievement.h */,
+				097336951B9498B9004E9B59 /* TreasureHuntAchievement.m */,
+				097336961B9498B9004E9B59 /* TreasureHuntComplete.h */,
+				097336971B9498B9004E9B59 /* TreasureHuntComplete.m */,
+				097336981B9498B9004E9B59 /* TreasureHuntLocation.m */,
+				097336991B9498B9004E9B59 /* TreasureHuntStatus.h */,
+				0973369A1B9498B9004E9B59 /* TreasureHuntStatus.m */,
 			);
 			path = TreasureHunt;
 			sourceTree = "<group>";
@@ -278,12 +282,12 @@
 		09BF7D321B8FE5F9008B8B8C /* ContentManagement */ = {
 			isa = PBXGroup;
 			children = (
-				09BF7D311B8FE5AC008B8B8C /* ContentManagement.h */,
-				09BF7D331B8FE62E008B8B8C /* ContentManagement.m */,
-				09BF7D351B8FE983008B8B8C /* GetPublicationsRequest.h */,
-				09BF7D361B8FE9BC008B8B8C /* GetPublicationsRequest.m */,
-				09BF7D381B8FEB36008B8B8C /* Publication.h */,
-				09BF7D391B8FEB6A008B8B8C /* Publication.m */,
+				0973369F1B9498C5004E9B59 /* ContentManagement.m */,
+				097336A01B9498C5004E9B59 /* Publication.m */,
+				097336A11B9498C5004E9B59 /* ContentManagement.h */,
+				097336A21B9498C5004E9B59 /* GetPublicationsRequest.h */,
+				097336A31B9498C5004E9B59 /* GetPublicationsRequest.m */,
+				097336A41B9498C5004E9B59 /* Publication.h */,
 			);
 			name = ContentManagement;
 			sourceTree = "<group>";
@@ -291,8 +295,10 @@
 		09BF7D3C1B8FF080008B8B8C /* AudienceMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				09BF7D3B1B8FF04D008B8B8C /* AudienceMonitor.h */,
-				09BF7D3D1B8FF109008B8B8C /* AudienceMonitor.m */,
+				097336A81B9498D4004E9B59 /* AudienceMonitor.h */,
+				097336A91B9498D4004E9B59 /* AudienceMonitor.m */,
+				097336AA1B9498D4004E9B59 /* SendMessageRequest.h */,
+				097336AB1B9498D4004E9B59 /* SendMessageRequest.m */,
 			);
 			name = AudienceMonitor;
 			sourceTree = "<group>";
@@ -353,33 +359,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09006A491B5844BD008624DA /* TreasureHuntComplete.m in Sources */,
-				09BF7D371B8FE9BC008B8B8C /* GetPublicationsRequest.m in Sources */,
 				09006A461B5844BD008624DA /* AppUser.m in Sources */,
 				09006A421B5844BD008624DA /* ActionBase.m in Sources */,
 				09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */,
+				0973369B1B9498B9004E9B59 /* TreasureHuntAchievement.m in Sources */,
 				09006A501B5844BD008624DA /* ProximitySenseSDK.m in Sources */,
 				09006A411B5844BD008624DA /* ApiOperations.m in Sources */,
+				097336A61B9498C5004E9B59 /* Publication.m in Sources */,
 				09006A541B5844BD008624DA /* BSN_GFDateFormatter.m in Sources */,
 				09006A511B5844BD008624DA /* RangingManager.m in Sources */,
+				097336921B94989D004E9B59 /* Extensions.m in Sources */,
+				097336AC1B9498D4004E9B59 /* AudienceMonitor.m in Sources */,
 				09006A571B5844BD008624DA /* README.md in Sources */,
-				09BF7D3E1B8FF109008B8B8C /* AudienceMonitor.m in Sources */,
 				09006A4E1B5844BD008624DA /* UserProfile.m in Sources */,
 				09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */,
-				09006A4A1B5844BD008624DA /* TreasureHuntLocation.m in Sources */,
-				09BF7D341B8FE62E008B8B8C /* ContentManagement.m in Sources */,
+				097336A51B9498C5004E9B59 /* ContentManagement.m in Sources */,
+				0973369C1B9498B9004E9B59 /* TreasureHuntComplete.m in Sources */,
+				097336AD1B9498D4004E9B59 /* SendMessageRequest.m in Sources */,
+				0973369E1B9498B9004E9B59 /* TreasureHuntStatus.m in Sources */,
 				09006A4C1B5844BD008624DA /* RichContentAction.m in Sources */,
+				097336A71B9498C5004E9B59 /* GetPublicationsRequest.m in Sources */,
 				09006A431B5844BD008624DA /* ActionResponse.m in Sources */,
-				09006A471B5844BD008624DA /* Integrations.m in Sources */,
 				09006A451B5844BD008624DA /* Application.m in Sources */,
 				09006A531B5844BD008624DA /* NSArray+Transform.m in Sources */,
 				09006A4F1B5844BD008624DA /* ZoneEventDetails.m in Sources */,
 				09006A441B5844BD008624DA /* ApiCredentials.m in Sources */,
 				09006A4D1B5844BD008624DA /* Sighting.m in Sources */,
 				09006A521B5844BD008624DA /* ApiUtility.m in Sources */,
-				09BF7D3A1B8FEB6A008B8B8C /* Publication.m in Sources */,
-				09006A481B5844BD008624DA /* TreasureHuntAchievement.m in Sources */,
-				09006A4B1B5844BD008624DA /* TreasureHuntStatus.m in Sources */,
+				0973369D1B9498B9004E9B59 /* TreasureHuntLocation.m in Sources */,
 				09006A551B5844BD008624DA /* NSObject+BSN_GFJson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

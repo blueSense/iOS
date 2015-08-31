@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Blue Sense Networks. All rights reserved.
 //
 
-#import "Integrations.h"
+#import "Extensions.h"
 #import "ActionBase.h"
 #import "TreasureHuntAchievement.h"
 #import "TreasureHuntComplete.h"
@@ -14,7 +14,7 @@
 #import "ContentManagement.h"
 #import "AudienceMonitor.h"
 
-@implementation Integrations
+@implementation Extensions
 
 + (void) registerCommonActionTypes
 {
@@ -29,9 +29,10 @@
                    }];
 }
 
-+ (Integrations *) instance
++ (Extensions *) instance
 {
-    static Integrations *_instance = nil;
+    static Extensions
+    *_instance = nil;
     
     @synchronized (self)
     {
