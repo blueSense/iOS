@@ -30,10 +30,7 @@
 
 - (void) getPublications:(void (^)(NSArray *, NSError *))onCompletion
 {
-    [[ProximitySenseSDK Api] requestForEndpoint:@"integrations/ContentManagement/publications" withResultObject:[Publication alloc] onCompletion:^(id result, NSError *connectionError) {
-        if (onCompletion != nil)
-            onCompletion((NSArray*)result, connectionError);
-    }];
+    [self getPublications:onCompletion withQuery:[[GetPublicationsRequest alloc] init]];
 }
 
 - (void) getPublications:(void (^)(NSArray *, NSError *))onCompletion withQuery:(GetPublicationsRequest *)getPublicationsRequest

@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "ProximitySenseSDK"
-  s.version      = "1.1.0"
-  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "ProximitySenseSDK-1.1.0" }
+  s.version      = "1.1.1"
+  s.source       = { :git => "https://github.com/BlueSenseNetworks/iOS.git", :tag => "ProximitySenseSDK-1.1.1" }
   
   s.summary      = "Blue Sense Networks official iOS SDK for integration with the ProximitySense cloud platform."
   s.description  = <<-DESC
@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "SDK/ProximitySenseSDK/**/*.h"
   s.preserve_paths = "SDK/ProximitySenseSDK/**/*.*"
   s.source_files = "SDK/ProximitySenseSDK/**/*.h"
+  s.exclude_files = "SDK/ProximitySenseSDK/**/*.m"
   s.vendored_libraries = "SDK/ProximitySenseSDK/lib/libProximitySenseSDK.a"
   s.library = 'ProximitySenseSDK'
 

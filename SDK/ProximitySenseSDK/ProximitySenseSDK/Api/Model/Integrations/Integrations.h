@@ -16,7 +16,7 @@
 
 + (Integrations *) instance;
 
-+ (ContentManagement*) ContentManagement;
-+ (AudienceMonitor*) AudienceMonitor;
+- (ContentManagement*) ContentManagement;
+- (AudienceMonitor*) AudienceMonitor;
 
 @end

@@ -44,11 +44,11 @@
     return _instance;
 }
 
-+ (ContentManagement *) ContentManagement {
+- (ContentManagement *) ContentManagement {
     return [ContentManagement instance];
 }
 
-+ (AudienceMonitor *) AudienceMonitor {
+- (AudienceMonitor *) AudienceMonitor {
     return [AudienceMonitor instance];
 }
 
