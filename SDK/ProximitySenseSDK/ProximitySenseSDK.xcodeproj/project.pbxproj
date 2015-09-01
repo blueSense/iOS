@@ -283,11 +283,11 @@
 			isa = PBXGroup;
 			children = (
 				0973369F1B9498C5004E9B59 /* ContentManagement.m */,
-				097336A01B9498C5004E9B59 /* Publication.m */,
 				097336A11B9498C5004E9B59 /* ContentManagement.h */,
 				097336A21B9498C5004E9B59 /* GetPublicationsRequest.h */,
 				097336A31B9498C5004E9B59 /* GetPublicationsRequest.m */,
 				097336A41B9498C5004E9B59 /* Publication.h */,
+				097336A01B9498C5004E9B59 /* Publication.m */,
 			);
 			name = ContentManagement;
 			sourceTree = "<group>";

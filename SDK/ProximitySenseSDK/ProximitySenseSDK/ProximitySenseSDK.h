@@ -19,7 +19,7 @@
 @class ApiCredentials;
 @class RangingManager;
 
-#define PROXIMITYSENSESDK_VERSION @"1.2.0"
+#define PROXIMITYSENSESDK_VERSION @"1.2.2"
 
 @interface ProximitySenseSDK : NSObject
 
