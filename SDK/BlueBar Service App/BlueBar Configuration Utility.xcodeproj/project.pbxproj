@@ -181,7 +181,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Blue Sense Networks";
 				TargetAttributes = {
 					0999CFDD189C693B00E877BC = {
@@ -299,6 +299,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -361,6 +362,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -374,6 +376,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BlueBar_Service_App-eixlgrzbdhhjcddxpcuxqtaodqcq/Build/Products/Debug-iphoneos",
 					"\"${PROJECT_DIR}/../BlueBarSDK\"/**",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.sense.net.beacon.configuration.utility;
 				PRODUCT_NAME = "Beacon Configuration Utility";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -390,6 +393,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -403,6 +407,7 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BlueBar_Service_App-eixlgrzbdhhjcddxpcuxqtaodqcq/Build/Products/Debug-iphoneos",
 					"\"${PROJECT_DIR}/../BlueBarSDK\"/**",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.sense.net.beacon.configuration.utility;
 				PRODUCT_NAME = "Beacon Configuration Utility";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

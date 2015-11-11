@@ -79,6 +79,17 @@
 
 - (void)setMode:(int)nextMode
 {
+
+    if (self.hud && !self.hud.hidden)
+    {
+        [self.hud hide:YES];
+    }
+    
+    if (nextMode != MODE_INITIAL) {
+        self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.hud.mode = MBProgressHUDModeIndeterminate;
+    }
+    
     switch (nextMode)
     {
         case MODE_INITIAL:
@@ -113,8 +124,8 @@
     {
         self.name.text = self.beacon.name;
         self.serial.text = self.beacon.serial;
-        if (self.beacon.configuration.battery.unsignedShortValue != 0)
-            self.battery.text = [NSString stringWithFormat:@"%d", self.beacon.configuration.battery.unsignedShortValue];
+        if (self.beacon.configuration.batteryLevel != 0)
+            self.battery.text = [NSString stringWithFormat:@"%@", self.beacon.configuration.batteryLevel];
         else
             self.battery.text = @"N/A";
 
@@ -152,9 +163,6 @@
     [self configureView];
 
     self.status.hidden = YES;
-
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.hud.mode = MBProgressHUDModeIndeterminate;
 
     [self setMode:MODE_CONNECTING];
 
