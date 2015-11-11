@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		093EF5D719D8DE2D00A51AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093EF5D619D8DE2D00A51AB2 /* Main.storyboard */; };
 		093EF5DA19DC696800A51AB2 /* CalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093EF5D919DC696800A51AB2 /* CalibrateViewController.m */; };
+		096AA20F1BF40B4600E4C51E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096AA20E1BF40B4600E4C51E /* Launch Screen.storyboard */; };
 		0999CFE2189C693B00E877BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999CFE1189C693B00E877BC /* Foundation.framework */; };
 		0999CFE4189C693B00E877BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999CFE3189C693B00E877BC /* CoreGraphics.framework */; };
 		0999CFE6189C693B00E877BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0999CFE5189C693B00E877BC /* UIKit.framework */; };
@@ -27,6 +28,7 @@
 		093EF5D619D8DE2D00A51AB2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		093EF5D819DC696800A51AB2 /* CalibrateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrateViewController.h; sourceTree = "<group>"; };
 		093EF5D919DC696800A51AB2 /* CalibrateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalibrateViewController.m; sourceTree = "<group>"; };
+		096AA20E1BF40B4600E4C51E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0999CFDE189C693B00E877BC /* Beacon Configuration Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beacon Configuration Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0999CFE1189C693B00E877BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0999CFE3189C693B00E877BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +115,7 @@
 				0999CFFC189C693B00E877BC /* Images.xcassets */,
 				093EF5D619D8DE2D00A51AB2 /* Main.storyboard */,
 				0999CFE8189C693B00E877BC /* Supporting Files */,
+				096AA20E1BF40B4600E4C51E /* Launch Screen.storyboard */,
 			);
 			path = "BlueBar Service App";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				093EF5D719D8DE2D00A51AB2 /* Main.storyboard in Resources */,
 				0999CFFD189C693B00E877BC /* Images.xcassets in Resources */,
+				096AA20F1BF40B4600E4C51E /* Launch Screen.storyboard in Resources */,
 				0999CFEC189C693B00E877BC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +363,6 @@
 			baseConfigurationReference = 10382C2052C67F35E3C7CA31 /* Pods-BlueBar Configuration Utility.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -390,7 +393,6 @@
 			baseConfigurationReference = C7A34E87AE858F2FE9813E0A /* Pods-BlueBar Configuration Utility.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
