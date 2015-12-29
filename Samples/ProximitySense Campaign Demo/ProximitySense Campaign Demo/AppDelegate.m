@@ -35,7 +35,8 @@ NSString* AppNotification_ApplicationsLoaded = @"AppNotification_ApplicationsLoa
     
     application.applicationIconBadgeNumber = 0;
     
-    [[ApiConnector instance] registerNotifications];
+    [ProximitySenseSDK Api].baseUrl = @"http://dev-api.proximitysense.com/v1/";
+   [[ApiConnector instance] registerNotifications];
 
     return YES;
 }

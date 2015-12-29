@@ -56,6 +56,8 @@
 
 - (void) configureSdkWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)privateKey
 {
+    [ProximitySenseSDK Api].baseUrl = @"http://dev-api.proximitysense.com/v1/";
+    
     [ProximitySenseSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
 
     [[ProximitySenseSDK Api] requestProfile:^(UserProfile* profile, NSError* error)
@@ -92,6 +94,18 @@
     [ProximitySenseSDK InitializeWithApplicationId:app.clientId andPrivateKey:app.privateKey];
     
     [[ProximitySenseSDK Ranging] startForUuid:@"A0B13730-3A9A-11E3-AA6E-0800200C9A66"];
+    
+    GetPublicationsRequest* request = [[GetPublicationsRequest alloc] init];
+    request.tags = @[@"IT"];
+    
+    [[[ProximitySenseSDK Extensions] ContentManagement] getPublications: ^(NSArray * publications, NSError* error)
+    {
+        NSLog(@"Publications: (%d) %@", (int) publications.count, publications);
+    } withQuery:request];
+    
+    SendMessageRequest* messageRequest = [[SendMessageRequest alloc] init];
+    messageRequest.message = @"Assistance needed!";
+    [[[ProximitySenseSDK Extensions] AudienceMonitor] sendMessage:messageRequest];
 }
 
 @end

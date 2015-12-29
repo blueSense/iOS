@@ -12,6 +12,7 @@
 #import "ApiCredentials.h"
 #import "AppUser.h"
 #import "Sighting.h"
+#import "SightingCompact.h"
 #import "NSObject+BSN_GFJson.h"
 #import "ApiUtility.h"
 #import "NSArray+Transform.h"
@@ -97,7 +98,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
     self = [super init];
     if (self)
     {
-        self.baseUrl = @"https://platform.proximitysense.com/api/v1/";
+        self.baseUrl = @"https://api.proximitysense.com/v1/";
         self.appUser = [[AppUser alloc] init];
         
         sdkPlatformAndVersion = [NSString stringWithFormat:@"%@ %@ - %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion, PROXIMITYSENSESDK_VERSION];
@@ -247,7 +248,23 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
         return [[Sighting alloc]initWithBeacon:(CLBeacon *)o];
     }];
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:sightings.jsonObject options:0 error:nil];
+    SightingCompact* compact = [[SightingCompact alloc] init];
+    if (sightings.count > 0) {
+        Sighting* first = sightings.firstObject;
+        if (first != nil){
+            compact.uuid = first.uuid;
+        }
+        
+        compact.d = [sightings transformWithBlock:^id(id o){
+            Sighting* sighting = o;
+            return [NSString stringWithFormat:@"%@;%@;%@;%@", sighting.major.stringValue, sighting.minor.stringValue, sighting.proximityCode, sighting.rssi];
+        }];
+    }
+    
+    NSArray* compactSightingsArray = @ [compact];
+    
+    //    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:sightings.jsonObject options:0 error:nil];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:compactSightingsArray.jsonObject options:0 error:nil];
     NSString * url =[NSString stringWithFormat:@"%@%@", self.baseUrl,  @"ranging"];
     
     NSMutableURLRequest *request = [self preparePostRequest:url withData:jsonData];

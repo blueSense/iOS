@@ -13,6 +13,7 @@
 @property ( nonatomic, strong ) NSNumber * minor;
 @property ( nonatomic, strong ) NSNumber * rssi;
 @property ( nonatomic, strong ) NSString * proximity;
+@property ( nonatomic, strong ) NSNumber * proximityCode;
 
 - (id)initWithBeacon:(CLBeacon *)beacon;
 + (id)sightingWithBeacon:(CLBeacon *)beacon;

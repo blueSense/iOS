@@ -26,6 +26,7 @@
 		09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3A1B5844BD008624DA /* BSN_ISO8601DateFormatter.m */; };
 		09006A571B5844BD008624DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3C1B5844BD008624DA /* README.md */; };
 		09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */; };
+		092C96711BC1E98700D424B0 /* SightingCompact.m in Sources */ = {isa = PBXBuildFile; fileRef = 092C96701BC1E98700D424B0 /* SightingCompact.m */; settings = {ASSET_TAGS = (); }; };
 		097336921B94989D004E9B59 /* Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336911B94989D004E9B59 /* Extensions.m */; };
 		0973369B1B9498B9004E9B59 /* TreasureHuntAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336951B9498B9004E9B59 /* TreasureHuntAchievement.m */; };
 		0973369C1B9498B9004E9B59 /* TreasureHuntComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336971B9498B9004E9B59 /* TreasureHuntComplete.m */; };
@@ -91,6 +92,8 @@
 		09006A3E1B5844BD008624DA /* NSDate+BSN_Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BSN_Helper.h"; sourceTree = "<group>"; };
 		09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BSN_Helper.m"; sourceTree = "<group>"; };
 		09006A401B5844BD008624DA /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		092C966F1BC1E8FB00D424B0 /* SightingCompact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SightingCompact.h; sourceTree = "<group>"; };
+		092C96701BC1E98700D424B0 /* SightingCompact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingCompact.m; sourceTree = "<group>"; };
 		097336901B94989D004E9B59 /* Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Extensions.h; path = ProximitySenseSDK/Api/Model/Extensions/Extensions.h; sourceTree = SOURCE_ROOT; };
 		097336911B94989D004E9B59 /* Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Extensions.m; path = ProximitySenseSDK/Api/Model/Extensions/Extensions.m; sourceTree = SOURCE_ROOT; };
 		097336931B9498B9004E9B59 /* TreasureHuntLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreasureHuntLocation.h; path = ProximitySenseSDK/Api/Model/Extensions/TreasureHunt/TreasureHuntLocation.h; sourceTree = SOURCE_ROOT; };
@@ -166,6 +169,7 @@
 		09006A091B5844BD008624DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09006A141B5844BD008624DA /* Extensions */,
 				09006A0A1B5844BD008624DA /* ActionBase.h */,
 				09006A0B1B5844BD008624DA /* ActionBase.m */,
 				09006A0C1B5844BD008624DA /* ActionResponse.h */,
@@ -176,11 +180,12 @@
 				09006A111B5844BD008624DA /* Application.m */,
 				09006A121B5844BD008624DA /* AppUser.h */,
 				09006A131B5844BD008624DA /* AppUser.m */,
-				09006A141B5844BD008624DA /* Extensions */,
 				09006A201B5844BD008624DA /* RichContentAction.h */,
 				09006A211B5844BD008624DA /* RichContentAction.m */,
 				09006A221B5844BD008624DA /* Sighting.h */,
 				09006A231B5844BD008624DA /* Sighting.m */,
+				092C966F1BC1E8FB00D424B0 /* SightingCompact.h */,
+				092C96701BC1E98700D424B0 /* SightingCompact.m */,
 				09006A241B5844BD008624DA /* UserProfile.h */,
 				09006A251B5844BD008624DA /* UserProfile.m */,
 				09006A261B5844BD008624DA /* ZoneEventDetails.h */,
@@ -363,6 +368,7 @@
 				09006A421B5844BD008624DA /* ActionBase.m in Sources */,
 				09006A561B5844BD008624DA /* BSN_ISO8601DateFormatter.m in Sources */,
 				0973369B1B9498B9004E9B59 /* TreasureHuntAchievement.m in Sources */,
+				092C96711BC1E98700D424B0 /* SightingCompact.m in Sources */,
 				09006A501B5844BD008624DA /* ProximitySenseSDK.m in Sources */,
 				09006A411B5844BD008624DA /* ApiOperations.m in Sources */,
 				097336A61B9498C5004E9B59 /* Publication.m in Sources */,
