@@ -22,16 +22,27 @@
 #import "Extensions.h"
 #import "Application.h"
 #import "UserProfile.h"
+#import "SRWebSocket.h"
 
 
 NSString *ApiNotification_ActionReceived = @"ProximitySenseSDK_ApiNotification_ActionReceived";
-
-
 
 NSString* HttpHeader_Authorization_ClientId = @"X-Authorization-ClientId";
 NSString* HttpHeader_Authorization_Signature = @"X-Authorization-Signature";
 NSString* HttpHeader_ProximitySense_SdkPlatformAndVersion = @"X-ProximitySense-SdkPlatformAndVersion";
 NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
+
+@interface BeaconSightingsMessage : NSObject
+
+@property (nonatomic, copy) NSString *messageType;
+@property ( nonatomic, strong ) NSString* uuid;
+@property ( nonatomic, strong ) NSArray * sightings;
+
+@end
+
+@implementation BeaconSightingsMessage
+@end
+
 
 
 @interface AppUserUpdateRequest : NSObject
@@ -70,7 +81,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 @implementation UpdateBeaconRequest
 @end
 
-@interface ApiOperations () <NSObject>
+@interface ApiOperations () <NSObject, SRWebSocketDelegate>
 @end
 
 
@@ -78,6 +89,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 {
     @private
     NSString* sdkPlatformAndVersion;
+    SRWebSocket* webSocket;
 }
 
 @synthesize apiDelegate;
@@ -112,7 +124,41 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 
 - (void) start
 {
+//    NSString* baseWSUrl = [self.baseUrl stringByReplacingOccurrencesOfString:@"http" withString:@"ws"];
+    
+    NSString * url =[NSString stringWithFormat:@"%@%@", self.baseUrl,  @"clients"];
+    NSLog(url);
+    
+    NSMutableURLRequest* request = [self prepareGetRequest:url];
+    NSURL* wsUrl = [[NSURL alloc] initWithString:[url stringByReplacingOccurrencesOfString:@"http" withString:@"ws"]];
+    request.URL = wsUrl;
+    
+    webSocket = [[SRWebSocket alloc] initWithURLRequest: request];
+    webSocket.delegate = self;
+    
+    [webSocket open];
 }
+
+- (void) webSocketDidOpen:(SRWebSocket *)webSocket
+{
+    NSLog(@"webSocket DID open!");
+}
+
+- (void) webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+    NSLog(@"webSocket DID Close!");
+}
+
+- (void) webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@"webSocket Failed! - %@", error.localizedDescription);
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"webSocket Got Message - %@", message);
+}
+
 
 - (void) setCommonHeaders:(NSMutableURLRequest*) request
 {
@@ -246,8 +292,45 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
     }
 }
 
+- (void)reportBeaconSightingsViaWebSocket:(NSArray *)beacons
+{
+    if (webSocket.readyState != SR_OPEN)
+        return;
+    
+    NSArray* sightings = [beacons transformWithBlock:^id(id o) {
+        return [[Sighting alloc]initWithBeacon:(CLBeacon *)o];
+    }];
+    
+    BeaconSightingsMessage* message = [[BeaconSightingsMessage alloc] init];
+    message.messageType = @"BeaconSightingsMessage";
+    
+    if (sightings.count > 0) {
+        Sighting* first = sightings.firstObject;
+        if (first != nil){
+            message.uuid = first.uuid;
+        }
+        
+        message.sightings = [sightings transformWithBlock:^id(id o){
+            Sighting* sighting = o;
+            return [NSString stringWithFormat:@"%@;%@;%@;%@", sighting.major.stringValue, sighting.minor.stringValue, sighting.proximityCode, sighting.rssi];
+        }];
+    }
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:message.jsonObject options:0 error:nil];
+    NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(json);
+    
+    [webSocket send:json];
+}
+
 - (void)reportBeaconSightings:(NSArray *)beacons
 {
+    
+    [self reportBeaconSightingsViaWebSocket:beacons];
+    
+    return;
+    
+    
     NSArray* sightings = [beacons transformWithBlock:^id(id o) {
         return [[Sighting alloc]initWithBeacon:(CLBeacon *)o];
     }];
