@@ -24,6 +24,8 @@ extern NSString *ApiNotification_ActionReceived;
 
     + (id) instance;
 
+    - (void) start;
+
     @property (nonatomic, assign) id<ApiOperationsDelegate> apiDelegate;
 
     @property (nonatomic, strong) ApiCredentials *credentials;

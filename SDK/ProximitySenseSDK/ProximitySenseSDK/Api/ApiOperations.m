@@ -110,6 +110,10 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
     return self;
 }
 
+- (void) start
+{
+}
+
 - (void) setCommonHeaders:(NSMutableURLRequest*) request
 {
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

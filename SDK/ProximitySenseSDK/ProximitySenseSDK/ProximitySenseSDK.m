@@ -30,6 +30,8 @@
 + (void)InitializeWithCredentials:(ApiCredentials *)apiCredentials
 {
     [ProximitySenseSDK Api].credentials = apiCredentials;
+    
+    [[ProximitySenseSDK Api] start];
 }
 
 

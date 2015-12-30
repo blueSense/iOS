@@ -3,7 +3,7 @@ workspace "ProximitySense Campaign Demo"
 inhibit_all_warnings!
 
 target "ProximitySense Campaign Demo" do
-    pod 'ProximitySenseSDK'
+    #    pod 'ProximitySenseSDK'
     pod 'MBProgressHUD', '~> 0.8'
     pod 'ZLSwipeableView'
 
