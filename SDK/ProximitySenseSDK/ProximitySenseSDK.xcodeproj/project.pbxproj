@@ -27,6 +27,7 @@
 		09006A571B5844BD008624DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3C1B5844BD008624DA /* README.md */; };
 		09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09006A3F1B5844BD008624DA /* NSDate+BSN_Helper.m */; };
 		092C96711BC1E98700D424B0 /* SightingCompact.m in Sources */ = {isa = PBXBuildFile; fileRef = 092C96701BC1E98700D424B0 /* SightingCompact.m */; };
+		09385DCD1C34C6E100213CE8 /* PersistentConnectionApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 09385DCC1C34C6E100213CE8 /* PersistentConnectionApi.m */; };
 		096AF6401C333A3D00E665F4 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 096AF63E1C333A3D00E665F4 /* SRWebSocket.m */; };
 		097336921B94989D004E9B59 /* Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336911B94989D004E9B59 /* Extensions.m */; };
 		0973369B1B9498B9004E9B59 /* TreasureHuntAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097336951B9498B9004E9B59 /* TreasureHuntAchievement.m */; };
@@ -95,6 +96,8 @@
 		09006A401B5844BD008624DA /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
 		092C966F1BC1E8FB00D424B0 /* SightingCompact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SightingCompact.h; sourceTree = "<group>"; };
 		092C96701BC1E98700D424B0 /* SightingCompact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightingCompact.m; sourceTree = "<group>"; };
+		09385DCB1C34C6C600213CE8 /* PersistentConnectionApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentConnectionApi.h; sourceTree = "<group>"; };
+		09385DCC1C34C6E100213CE8 /* PersistentConnectionApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentConnectionApi.m; sourceTree = "<group>"; };
 		096AF63C1C333A3D00E665F4 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
 		096AF63D1C333A3D00E665F4 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
 		096AF63E1C333A3D00E665F4 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 			children = (
 				09006A071B5844BD008624DA /* ApiOperations.h */,
 				09006A081B5844BD008624DA /* ApiOperations.m */,
+				09385DCB1C34C6C600213CE8 /* PersistentConnectionApi.h */,
+				09385DCC1C34C6E100213CE8 /* PersistentConnectionApi.m */,
 				09006A091B5844BD008624DA /* Model */,
 			);
 			path = Api;
@@ -394,6 +399,7 @@
 				09006A571B5844BD008624DA /* README.md in Sources */,
 				09006A4E1B5844BD008624DA /* UserProfile.m in Sources */,
 				09006A581B5844BD008624DA /* NSDate+BSN_Helper.m in Sources */,
+				09385DCD1C34C6E100213CE8 /* PersistentConnectionApi.m in Sources */,
 				097336A51B9498C5004E9B59 /* ContentManagement.m in Sources */,
 				0973369C1B9498B9004E9B59 /* TreasureHuntComplete.m in Sources */,
 				097336AD1B9498D4004E9B59 /* SendMessageRequest.m in Sources */,

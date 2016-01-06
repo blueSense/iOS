@@ -22,19 +22,25 @@
 #import "Extensions.h"
 #import "Application.h"
 #import "UserProfile.h"
-#import "SRWebSocket.h"
-
+#import "PersistentConnectionApi.h"
 
 NSString *ApiNotification_ActionReceived = @"ProximitySenseSDK_ApiNotification_ActionReceived";
 
-NSString* HttpHeader_Authorization_ClientId = @"X-Authorization-ClientId";
-NSString* HttpHeader_Authorization_Signature = @"X-Authorization-Signature";
-NSString* HttpHeader_ProximitySense_SdkPlatformAndVersion = @"X-ProximitySense-SdkPlatformAndVersion";
-NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
+static NSString* const HttpHeader_Authorization_ClientId = @"X-Authorization-ClientId";
+static NSString* const HttpHeader_Authorization_Signature = @"X-Authorization-Signature";
+static NSString* const HttpHeader_ProximitySense_SdkPlatformAndVersion = @"X-ProximitySense-SdkPlatformAndVersion";
+static NSString* const HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 
-@interface BeaconSightingsMessage : NSObject
+@interface PersistentApiMessage : NSObject
 
 @property (nonatomic, copy) NSString *messageType;
+@end
+
+@implementation PersistentApiMessage
+@end
+
+@interface BeaconSightingsMessage : PersistentApiMessage
+
 @property ( nonatomic, strong ) NSString* uuid;
 @property ( nonatomic, strong ) NSArray * sightings;
 
@@ -45,13 +51,14 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 
 
 
-@interface AppUserUpdateRequest : NSObject
+@interface AppUserUpdateMessage : PersistentApiMessage
 
+@property (nonatomic, strong) NSString *appSpecificId;
 @property (nonatomic, copy) NSDictionary *userMetadata;
 
 @end
 
-@implementation AppUserUpdateRequest
+@implementation AppUserUpdateMessage
 @end
 
 @interface ApiCredentialsRequest : NSObject
@@ -81,7 +88,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 @implementation UpdateBeaconRequest
 @end
 
-@interface ApiOperations () <NSObject, SRWebSocketDelegate>
+@interface ApiOperations () <NSObject>
 @end
 
 
@@ -89,7 +96,7 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 {
     @private
     NSString* sdkPlatformAndVersion;
-    SRWebSocket* webSocket;
+    PersistentConnectionApi* persistentConnection;
 }
 
 @synthesize apiDelegate;
@@ -122,48 +129,28 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
     return self;
 }
 
-- (void) start
+- (void) openConnection
 {
-//    NSString* baseWSUrl = [self.baseUrl stringByReplacingOccurrencesOfString:@"http" withString:@"ws"];
+    [self closeConnection];
     
-    NSString * url =[NSString stringWithFormat:@"%@%@", self.baseUrl,  @"clients"];
-    NSLog(url);
+    persistentConnection = [[PersistentConnectionApi alloc] init];
+    [persistentConnection startWithUrl:self.baseUrl andCredentials:self.credentials];
+}
+
+- (void) closeConnection
+{
+    if (persistentConnection == nil || !persistentConnection.isConnected)
+        return;
     
-    NSMutableURLRequest* request = [self prepareGetRequest:url];
-    NSURL* wsUrl = [[NSURL alloc] initWithString:[url stringByReplacingOccurrencesOfString:@"http" withString:@"ws"]];
-    request.URL = wsUrl;
-    
-    webSocket = [[SRWebSocket alloc] initWithURLRequest: request];
-    webSocket.delegate = self;
-    
-    [webSocket open];
+    [persistentConnection close];
+    persistentConnection = nil;
 }
-
-- (void) webSocketDidOpen:(SRWebSocket *)webSocket
-{
-    NSLog(@"webSocket DID open!");
-}
-
-- (void) webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
-{
-    NSLog(@"webSocket DID Close!");
-}
-
-- (void) webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
-{
-    NSLog(@"webSocket Failed! - %@", error.localizedDescription);
-}
-
-- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
-{
-    NSLog(@"webSocket Got Message - %@", message);
-}
-
 
 - (void) setCommonHeaders:(NSMutableURLRequest*) request
 {
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:sdkPlatformAndVersion forHTTPHeaderField:HttpHeader_ProximitySense_SdkPlatformAndVersion];
+//    [request setValue:self.appUser.appSpecificId forHTTPHeaderField:HttpHeader_ProximitySense_AppUserId];
 }
 
 - (NSMutableURLRequest*) prepareGetRequest:(NSString*)url
@@ -292,11 +279,8 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
     }
 }
 
-- (void)reportBeaconSightingsViaWebSocket:(NSArray *)beacons
+- (void)reportBeaconSightings:(NSArray *)beacons
 {
-    if (webSocket.readyState != SR_OPEN)
-        return;
-    
     NSArray* sightings = [beacons transformWithBlock:^id(id o) {
         return [[Sighting alloc]initWithBeacon:(CLBeacon *)o];
     }];
@@ -316,66 +300,18 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
         }];
     }
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:message.jsonObject options:0 error:nil];
-    NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(json);
-    
-    [webSocket send:json];
-}
-
-- (void)reportBeaconSightings:(NSArray *)beacons
-{
-    
-    [self reportBeaconSightingsViaWebSocket:beacons];
-    
-    return;
-    
-    
-    NSArray* sightings = [beacons transformWithBlock:^id(id o) {
-        return [[Sighting alloc]initWithBeacon:(CLBeacon *)o];
-    }];
-    
-    SightingCompact* compact = [[SightingCompact alloc] init];
-    if (sightings.count > 0) {
-        Sighting* first = sightings.firstObject;
-        if (first != nil){
-            compact.uuid = first.uuid;
-        }
-        
-        compact.d = [sightings transformWithBlock:^id(id o){
-            Sighting* sighting = o;
-            return [NSString stringWithFormat:@"%@;%@;%@;%@", sighting.major.stringValue, sighting.minor.stringValue, sighting.proximityCode, sighting.rssi];
-        }];
-    }
-    
-    NSArray* compactSightingsArray = @ [compact];
-    
-    //    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:sightings.jsonObject options:0 error:nil];
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:compactSightingsArray.jsonObject options:0 error:nil];
-    NSString * url =[NSString stringWithFormat:@"%@%@", self.baseUrl,  @"ranging"];
-    
-    NSMutableURLRequest *request = [self preparePostRequest:url withData:jsonData];
-    [request setValue:self.appUser.appSpecificId forHTTPHeaderField:HttpHeader_ProximitySense_AppUserId];
-
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
-     {
-         if (connectionError || [ApiUtility isResponseFailed:response])
-         {
-             [self logError: connectionError withData:data];
-             return;
-         }
-     }];
+    [persistentConnection sendMessage:message];
 }
 
 - (void) pollForAvailableActionResults
 {
+    return;
+    
     NSString * url =[NSString stringWithFormat:@"%@%@", self.baseUrl,  @"decision"];
     
     NSMutableURLRequest *request = [self prepareGetRequest:url];
-    [request setValue:self.appUser.appSpecificId forHTTPHeaderField:@"X-ProximitySense-AppUserId"];
-    
+    [request setValue:self.appUser.appSpecificId forHTTPHeaderField:HttpHeader_ProximitySense_AppUserId];
+
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
@@ -513,10 +449,17 @@ NSString* HttpHeader_ProximitySense_AppUserId = @"X-ProximitySense-AppUserId";
 
 - (void) updateAppUser: (AppUser*)appUser withCredentials: (ApiCredentials*)credentials
 {
-    AppUserUpdateRequest* updateRequest = [AppUserUpdateRequest new];
-    updateRequest.userMetadata = self.appUser.userMetadata;
+    AppUserUpdateMessage* updateMessage = [AppUserUpdateMessage new];
+    updateMessage.messageType = @"AppUserUpdateMessage";
+    updateMessage.appSpecificId = self.appUser.appSpecificId;
+    updateMessage.userMetadata = self.appUser.userMetadata;
     
-    [self requestForEndpoint:@"appUser" withObject:updateRequest withResultObject:nil onCompletion:nil withCredentials: credentials ];
+    [persistentConnection sendMessage:updateMessage];
+    
+    
+//    [self requestForEndpoint:@"appUser" withObject:updateRequest withResultObject:nil onCompletion:nil withCredentials: credentials ];
+    
+    
 }
 
 

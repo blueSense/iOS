@@ -57,7 +57,6 @@
 - (void) configureSdkWithApplicationId:(NSString *)applicationId andPrivateKey: (NSString *)privateKey
 {
 //    [ProximitySenseSDK Api].baseUrl = @"http://dev-api.proximitysense.com/v1/";
-//    [ProximitySenseSDK Api].baseUrl = @"http://localapi.proximitysense.com/v1/";
     [ProximitySenseSDK Api].baseUrl = @"http://localapi.proximitysense.com/v1/";
     
     [ProximitySenseSDK InitializeWithApplicationId:applicationId andPrivateKey:privateKey];
@@ -76,6 +75,7 @@
                                                   profile.company ?: [NSNull null], @"company",
                                                   profile.website ?: [NSNull null], @"website",
                                                   nil];
+         
 
      } withCredentials:serviceCredentials];
 }

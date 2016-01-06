@@ -31,7 +31,7 @@
 {
     [ProximitySenseSDK Api].credentials = apiCredentials;
     
-    [[ProximitySenseSDK Api] start];
+    [[ProximitySenseSDK Api] openConnection];
 }
 
 
