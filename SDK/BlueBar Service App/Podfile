@@ -8,5 +8,5 @@ target :"BlueBar Configuration Utility" do
     pod "MBProgressHUD", "~> 0.8"
     pod "ISO8601DateFormatter", "~> 0.6"
 
-    xcodeproj "BlueBar Configuration Utility.xcodeproj"
+    project "BlueBar Configuration Utility.xcodeproj"
 end

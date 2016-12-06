@@ -162,11 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0999D013189C693B00E877BC /* Build configuration list for PBXNativeTarget "BlueBar Configuration Utility" */;
 			buildPhases = (
-				88D68CFBD5E34971AEDAD340 /* Check Pods Manifest.lock */,
+				88D68CFBD5E34971AEDAD340 /* [CP] Check Pods Manifest.lock */,
 				0999CFDA189C693B00E877BC /* Sources */,
 				0999CFDB189C693B00E877BC /* Frameworks */,
 				0999CFDC189C693B00E877BC /* Resources */,
-				1D316AFE2B3441E4A879B6F6 /* Copy Pods Resources */,
+				1D316AFE2B3441E4A879B6F6 /* [CP] Copy Pods Resources */,
+				88B4DAD22F81B89C493773AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,14 +226,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D316AFE2B3441E4A879B6F6 /* Copy Pods Resources */ = {
+		1D316AFE2B3441E4A879B6F6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,19 +241,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueBar Configuration Utility/Pods-BlueBar Configuration Utility-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88D68CFBD5E34971AEDAD340 /* Check Pods Manifest.lock */ = {
+		88B4DAD22F81B89C493773AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueBar Configuration Utility/Pods-BlueBar Configuration Utility-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88D68CFBD5E34971AEDAD340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
