@@ -7,5 +7,5 @@ target "ProximitySense Campaign Demo" do
     pod 'MBProgressHUD', '~> 0.8'
     pod 'ZLSwipeableView'
 
-    xcodeproj "ProximitySense Campaign Demo.xcodeproj"
+    project "ProximitySense Campaign Demo.xcodeproj"
 end

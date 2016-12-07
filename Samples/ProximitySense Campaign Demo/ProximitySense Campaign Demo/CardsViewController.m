@@ -70,7 +70,7 @@
 
 - (void) clear
 {
-    [self.swipeableView discardAllSwipeableViews];
+    [self.swipeableView discardAllViews];
     availableCards = 0;
     [self updateAvailableCards];
 }
@@ -182,7 +182,7 @@
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
     
-    [self.swipeableView loadNextSwipeableViewsIfNeeded];
+    [self.swipeableView loadViewsIfNeeded];
 }
 
 
